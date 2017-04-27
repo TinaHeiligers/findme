@@ -14,3 +14,10 @@ _**Disclaimer:*_
 _This game's WIP_
 
 Feel free to contact me should you have any questions: twitter: @tinaheiligers1
+
+
+To Do:
+1. Add timer on turn duration
+2. Add who's turn it is next
+3. randomise card deck with new games
+4. Consider varying number of cards played.
