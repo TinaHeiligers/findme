@@ -8,10 +8,13 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  margin-top: 20;
+  background-color: orange;
+  border: 1px solid blue;
+  height: 50vh;
+  padding-top: 0;
   color: white;
+
 }
 
 .App-intro {
