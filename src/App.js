@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import StartPage from './components/StartPage';
+import CardsContainer from './containers/CardsContainer';
 
 class App extends Component {
   constructor() {
@@ -34,6 +35,10 @@ class App extends Component {
     return(
       <div>
         <div>
+
+          <CardsContainer className="cards-container"
+            cards={this.state.cards}
+          />
           <StartPage restartGame={this.restartGame}/>
         </div>
       </div>

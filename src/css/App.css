@@ -71,3 +71,20 @@ button.start-hard-game-button {
   background: -moz-radial-gradient(#ff0000, #8b0000); /* For Firefox 3.6 to 15 */
   background: radial-gradient(#ff0000, #8b0000); /* Standard syntax (must be last) */
 }
+
+/*-------CARDS CONTAINER --------------*/
+.cards-container {
+  padding: 0;
+  margin: 0;
+  /*margin-right: 10px;*/
+  list-style: none;
+  /*border: 1px solid silver;*/
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+
+}
