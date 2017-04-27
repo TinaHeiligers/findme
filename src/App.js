@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       cards: [],
       chosenCards: [],
-      players: [],
+      players: {},
       currentPlayerIndex: 0
     };
 
@@ -25,8 +25,7 @@ class App extends Component {
     else {
       num = 24
     }
-    console.log('RESTARTING GAME CLICK HANDLER: ', e);
-    console.log(`restarting Game on ${e} levels with ${num} cards`);
+    console.log(`RESTARTING GAME on ${e} levels with ${num} cards`);
     // this.randomizeCards();
     // this.resetPlayers();
   }
