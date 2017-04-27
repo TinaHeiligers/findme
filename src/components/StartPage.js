@@ -1,5 +1,6 @@
 import React from 'react';
-import AddPlayerFormContainer from '../containers/AddPlayerFormContainer'
+import AddPlayerFormContainer from '../containers/AddPlayerFormContainer';
+import Players from './Players';
 
 class StartPage extends React.Component {
   constructor() {
@@ -17,7 +18,8 @@ class StartPage extends React.Component {
       <button className="start-easy-game-button" name="easy" onClick={(e) => this.props.restartGame(e.target.name)}>EASY</button>
       <button className="start-medium-game-button" name="medium" onClick={(e) => this.props.restartGame(e.target.name)}>MEDIUM</button>
       <button className="start-hard-game-button" name="hard" onClick={(e) => this.props.restartGame(e.target.name)}>HARD</button>
-      <AddPlayerFormContainer />
+      <AddPlayerFormContainer addPlayer={this.props.addPlayer}/>
+      <Players players={this.props.players}/>
     </div>
     )
   }

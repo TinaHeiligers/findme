@@ -10,7 +10,7 @@ class AddPlayerFormContainer extends React.Component {
       matchedCards: []
     }
     console.log(player);
-    // this.props.addPlayer(player);
+    this.props.addPlayer(player);
     this.playerForm.reset()
   }
 
