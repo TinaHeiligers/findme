@@ -1,0 +1,147 @@
+- cliui@3.2.0 node_modules/jest-cli/node_modules/cliui
+- yargs@6.6.0 node_modules/jest-cli/node_modules/yargs
+- jest-cli@18.1.0 node_modules/jest-cli
+findme@0.1.0 /Users/Tina/Projects/grace_hopper/senior/stackathon/findme
+├─┬ jest@19.0.2 
+│ └─┬ jest-cli@19.0.2 
+│   ├── callsites@2.0.0 
+│   ├─┬ is-ci@1.0.10 
+│   │ └── ci-info@1.0.0 
+│   ├─┬ istanbul-api@1.1.7 
+│   │ ├── async@2.3.0 
+│   │ ├── fileset@2.0.3 
+│   │ ├─┬ istanbul-lib-hook@1.0.5 
+│   │ │ └─┬ append-transform@0.4.0 
+│   │ │   └── default-require-extensions@1.0.0 
+│   │ ├── istanbul-lib-report@1.0.0 
+│   │ ├── istanbul-lib-source-maps@1.1.1 
+│   │ └─┬ istanbul-reports@1.0.2 
+│   │   └─┬ handlebars@4.0.6 
+│   │     └── source-map@0.4.4 
+│   ├── jest-changed-files@19.0.2 
+│   ├─┬ jest-config@19.0.3 
+│   │ ├── jest-environment-node@19.0.2 
+│   │ ├─┬ jest-resolve@19.0.2 
+│   │ │ └─┬ browser-resolve@1.11.2 
+│   │ │   └── resolve@1.1.7 
+│   │ ├── jest-validate@19.0.2 
+│   │ └─┬ pretty-format@19.0.0 
+│   │   └── ansi-styles@3.0.0 
+│   ├─┬ jest-environment-jsdom@19.0.2 
+│   │ ├── jest-mock@19.0.0 
+│   │ └─┬ jsdom@9.12.0 
+│   │   ├── abab@1.0.3 
+│   │   ├── acorn@4.0.11 
+│   │   ├─┬ acorn-globals@3.1.0 
+│   │   │ └── acorn@4.0.11 
+│   │   ├── array-equal@1.0.0 
+│   │   ├── content-type-parser@1.0.1 
+│   │   ├── cssom@0.3.2 
+│   │   ├── cssstyle@0.2.37 
+│   │   ├─┬ escodegen@1.8.1 
+│   │   │ ├── estraverse@1.9.3 
+│   │   │ └── source-map@0.2.0 
+│   │   ├── html-encoding-sniffer@1.0.1 
+│   │   ├── nwmatcher@1.3.9 
+│   │   ├── parse5@1.5.1 
+│   │   ├── symbol-tree@3.2.2 
+│   │   ├── webidl-conversions@4.0.1 
+│   │   ├─┬ whatwg-encoding@1.0.1 
+│   │   │ └── iconv-lite@0.4.13 
+│   │   ├─┬ whatwg-url@4.7.1 
+│   │   │ ├── tr46@0.0.3 
+│   │   │ └── webidl-conversions@3.0.1 
+│   │   └── xml-name-validator@2.0.1 
+│   ├─┬ jest-haste-map@19.0.2 
+│   │ ├─┬ fb-watchman@2.0.0 
+│   │ │ └─┬ bser@2.0.0 
+│   │ │   └── node-int64@0.4.0 
+│   │ └─┬ sane@1.5.0 
+│   │   ├─┬ exec-sh@0.2.0 
+│   │   │ └── merge@1.2.0 
+│   │   ├─┬ fb-watchman@1.9.2 
+│   │   │ └── bser@1.0.2 
+│   │   ├─┬ walker@1.0.7 
+│   │   │ └─┬ makeerror@1.0.11 
+│   │   │   └── tmpl@1.0.4 
+│   │   └── watch@0.10.0 
+│   ├─┬ jest-jasmine2@19.0.2 
+│   │ ├── jest-matcher-utils@19.0.0 
+│   │ └── jest-matchers@19.0.0 
+│   ├── jest-message-util@19.0.0 
+│   ├── jest-regex-util@19.0.0 
+│   ├─┬ jest-resolve-dependencies@19.0.0 
+│   │ └── jest-file-exists@19.0.0 
+│   ├─┬ jest-runtime@19.0.3 
+│   │ ├─┬ babel-jest@19.0.0 
+│   │ │ └─┬ babel-preset-jest@19.0.0 
+│   │ │   └── babel-plugin-jest-hoist@19.0.0 
+│   │ ├─┬ babel-plugin-istanbul@4.1.1 
+│   │ │ ├─┬ find-up@2.1.0 
+│   │ │ │ └─┬ locate-path@2.0.0 
+│   │ │ │   ├─┬ p-locate@2.0.0 
+│   │ │ │   │ └── p-limit@1.1.0 
+│   │ │ │   └── path-exists@3.0.0 
+│   │ │ └── test-exclude@4.0.3 
+│   │ ├── strip-bom@3.0.0 
+│   │ └─┬ yargs@6.6.0 
+│   │   └── cliui@3.2.0 
+│   ├─┬ jest-snapshot@19.0.2 
+│   │ └─┬ jest-diff@19.0.0 
+│   │   └── diff@3.2.0 
+│   ├─┬ jest-util@19.0.2 
+│   │ └── leven@2.1.0 
+│   ├─┬ node-notifier@5.1.2 
+│   │ ├── growly@1.3.0 
+│   │ └── shellwords@0.1.0 
+│   ├── string-length@1.0.1 
+│   ├── throat@3.0.0 
+│   ├── worker-farm@1.3.1 
+│   └─┬ yargs@6.6.0 
+│     ├── cliui@3.2.0 
+│     └── yargs-parser@4.2.1 
+└─┬ react-scripts@0.9.5
+  └─┬ jest@18.1.0 
+    └─┬ jest-cli@18.1.0 
+      ├── jest-changed-files@17.0.2 
+      ├─┬ jest-config@18.1.0 
+      │ └── jest-environment-node@18.1.0 
+      ├── jest-environment-jsdom@18.1.0 
+      ├── jest-file-exists@17.0.0 
+      ├─┬ jest-haste-map@18.1.0 
+      │ └─┬ fb-watchman@1.9.2 
+      │   └── bser@1.0.2 
+      ├─┬ jest-jasmine2@18.1.0 
+      │ ├── jest-matcher-utils@18.1.0 
+      │ └── jest-matchers@18.1.0 
+      ├── jest-mock@18.0.0 
+      ├── jest-resolve@18.1.0 
+      ├── jest-resolve-dependencies@18.1.0 
+      ├── jest-runtime@18.1.0 
+      ├─┬ jest-snapshot@18.1.0 
+      │ ├── jest-diff@18.1.0 
+      │ └── pretty-format@18.1.0 
+      ├── jest-util@18.1.0 
+      ├─┬ node-notifier@4.6.1 
+      │ ├─┬ cli-usage@0.1.4 
+      │ │ ├── marked@0.3.6 
+      │ │ └─┬ marked-terminal@1.7.0 
+      │ │   ├─┬ cardinal@1.0.0 
+      │ │   │ ├── ansicolors@0.2.1 
+      │ │   │ └─┬ redeyed@1.0.1 
+      │ │   │   └── esprima@3.0.0 
+      │ │   ├─┬ cli-table@0.3.1 
+      │ │   │ └── colors@1.0.3 
+      │ │   └─┬ node-emoji@1.5.1 
+      │ │     └── string.prototype.codepointat@0.2.0 
+      │ └─┬ lodash.clonedeep@3.0.2 
+      │   └─┬ lodash._baseclone@3.3.0 
+      │     ├── lodash._arraycopy@3.0.0 
+      │     ├── lodash._arrayeach@3.0.0 
+      │     ├─┬ lodash._baseassign@3.2.0 
+      │     │ └── lodash._basecopy@3.0.1 
+      │     └── lodash._basefor@3.0.3 
+      ├── sane@1.4.1 
+      └─┬ yargs@6.6.0 
+        └── cliui@3.2.0 
+
