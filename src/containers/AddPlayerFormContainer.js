@@ -17,8 +17,10 @@ class AddPlayerFormContainer extends React.Component {
     }
   }
   message(num) {
-    if (num === 1) {
-      return "Choose game or add a second player"
+    if (num < 1) {
+      return "Please add your name to start playing!"
+    } else if (num < 2) {
+      return "Add another player or press button to start"
     } else if (num === 2) {
       return "We're all set!"
     } else {
@@ -30,10 +32,10 @@ class AddPlayerFormContainer extends React.Component {
     if(!this.props.gameStarted) {
       return(
         <div className="player-heading">
+          <p>{this.message(this.props.players.length)}</p>
           <form ref={(input) => this.playerForm = input} className="player-edit" onSubmit={(e) => this.createPlayer(e)}>
           <input className={this.props.players.length === 2 ? "hidden": "visible"} ref={(input) => this.name = input} type="text" placeholder="Player Name"/>
-          <p>{this.message(this.props.players.length)}</p>
-          <button type="Submit">Add Me</button>
+          <button className={this.props.players.length === 2 ? "hidden": "visible"} type="Submit">Add Me</button>
           </form>
         </div>
        )

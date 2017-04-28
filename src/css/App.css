@@ -40,6 +40,10 @@
 }
 
 /*START rendering cards in APP*/
+.start-buttons {
+  float: right;
+  padding-right:10px;
+}
 button.start-easy-game-button {
   text-align: center;
   color: black;
@@ -48,6 +52,7 @@ button.start-easy-game-button {
   height: 50px;
   width: 50px;
   padding: 0.1em 0.5em;
+  margin-right: 5px;
   font-size: 0.7em;
   background: green; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#00e600, #006800); /* Safari 5.1 to 6.0 */
@@ -60,6 +65,8 @@ button.start-medium-game-button {
   color: black;
   border-radius: 50px;
   margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   height: 50px;
   width: 50px;
   padding: 0.1em 0.5em;
@@ -75,6 +82,8 @@ button.start-hard-game-button {
   color: black;
   border-radius: 50px;
   margin-top: 5px;
+  margin-left:5px;
+  margin-left: 5px;
   height: 50px;
   width: 50px;
   padding: 0.1em 0.5em;
@@ -85,6 +94,20 @@ button.start-hard-game-button {
   background: -moz-radial-gradient(#ff0000, #8b0000); /* For Firefox 3.6 to 15 */
   background: radial-gradient(#ff0000, #8b0000); /* Standard syntax (must be last) */
 }
+.player-edit {
+  margin-bottom: 20px;
+  border-width:3px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 li.players {
   list-style: none;
   padding-left: 5px;
