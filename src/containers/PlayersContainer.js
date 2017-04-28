@@ -7,7 +7,10 @@ class PlayersContainer extends React.Component {
   render(){
     return(
       <div>
-        <AddPlayerFormContainer addPlayer={this.props.addPlayer}/>
+        <AddPlayerFormContainer
+          addPlayer={this.props.addPlayer}
+          players={this.props.players}
+          />
         <Players
           players={this.props.players} />
       </div>

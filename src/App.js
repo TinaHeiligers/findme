@@ -20,9 +20,14 @@ class App extends Component {
 
   addPlayer(player) {
     const players = this.state.players;
-    players.unshift(player)
-    this.setState({ players })
-  }
+    if (players.length < 2) {
+        players.unshift(player)
+        this.setState({ players })
+      } else {
+      return "Only up to two may play!"
+      }
+    }
+
   currentPlayer() {
     return this.state.players[this.state.currentPlayerIndex];
   }
