@@ -16,6 +16,7 @@ class Players extends React.Component {
     return(
       <ul>
         Players COMPONENT: FIND PROPS BELOW
+        {Object.values(this.props.players || []).map(player => this.renderPlayer(player))}
       </ul>
       )
   }
