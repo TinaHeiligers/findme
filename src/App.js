@@ -65,6 +65,7 @@ class App extends Component {
       <div>
         <div>
           <StartPage
+            className={this.gameStarted ? "visible" : "hidden"}
             restartGame={this.restartGame}
             addPlayer={this.addPlayer}/>
           <PlayersContainer

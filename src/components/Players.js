@@ -1,6 +1,5 @@
 import React from 'react';
 
-//gets as props players passed down from PlayersContainer
 class Players extends React.Component {
   renderPlayer(player) {
     return(
