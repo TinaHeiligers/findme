@@ -45,4 +45,5 @@ class AddPlayerFormContainer extends React.Component {
 }
 
 export default AddPlayerFormContainer;
+//TODO: change input fields according to wireframe
 
