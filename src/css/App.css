@@ -77,3 +77,9 @@ li.players {
   text-align: left;
   line-height: 1.5em;
 }
+.hidden {
+    visibility: hidden;
+}
+.visible {
+    display: block;
+}

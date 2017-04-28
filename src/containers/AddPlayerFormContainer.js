@@ -31,7 +31,7 @@ class AddPlayerFormContainer extends React.Component {
       return(
         <div className="player-heading">
           <form ref={(input) => this.playerForm = input} className="player-edit" onSubmit={(e) => this.createPlayer(e)}>
-          <input ref={(input) => this.name = input} type="text" placeholder="Player Name"/>
+          <input className={this.props.players.length === 2 ? "hidden": "visible"} ref={(input) => this.name = input} type="text" placeholder="Player Name"/>
           <p>{this.message(this.props.players.length)}</p>
           <button type="Submit">Add Me</button>
           </form>
@@ -43,3 +43,4 @@ class AddPlayerFormContainer extends React.Component {
 }
 
 export default AddPlayerFormContainer;
+
