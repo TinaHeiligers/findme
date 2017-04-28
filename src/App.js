@@ -41,8 +41,8 @@ class App extends Component {
   }
 
   resetPlayers() {
-    const players = {...this.state.players};
-    Object.values(players).forEach(player => player.matchedCards = []);
+    const players = [...this.state.players];
+    players.forEach(player => player.matchedCards = []);
     this.setState({
       players: players,
       currentPlayerIndex: 0
@@ -58,7 +58,7 @@ class App extends Component {
   }
 
   scores() {
-    return this.players.map(player => player.matchedCards.length);
+    return this.state.players.map(player => player.matchedCards.length);
   }
 
   //gameStarted toggles directly back to false after I click one card.
@@ -68,10 +68,12 @@ class App extends Component {
 
   gameOver() {
     if(!this.gameStarted()) {
+      console.log("IN GAME OVER, :", !this.gameStarted())
       return false;
     } else {
-      const totalScores = this.scores.reduce((a, b) => a + b, 0);
-      return totalScores === this.totalNumberOfCards;
+      const totalScores = this.scores().reduce((a, b) => a + b, 0);
+      console.log("IN GAME OVER, else condition :", totalScores, this.totalNumberOfCards())
+      return totalScores === this.totalNumberOfCards();
     }
   }
 
@@ -140,8 +142,8 @@ class App extends Component {
   }
 
   switchTurns() {
-    if(this.gameOver) {
-      console.log("Game over")
+    if(this.gameOver()) {
+      console.log("GAME OVER!")
     } else {
         this.setState({
           currentPlayerIndex: (this.state.currentPlayerIndex + 1) % Object.keys(this.state.players).length

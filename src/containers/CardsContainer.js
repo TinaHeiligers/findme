@@ -66,7 +66,7 @@ class CardsContainer extends React.Component {
         {this.props.cards.map(this.renderCards)}</ul>
         <br/>
         <div className="game-over" value={this.props.gameOver}>
-          <div>{this.props.gameOver ? "GAME OVER! " : ""}</div>
+          <div>{this.props.gameOver() ? "GAME OVER! " : ""}</div>
           <div className="winner">{this.renderWinner()}</div>
         </div>
       </div>
