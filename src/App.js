@@ -83,24 +83,18 @@ class App extends Component {
       return;
     }
     const newCards = [];
-    newCards.push(sampleCards)
-    newCards.push(Object
-      .keys(sampleCards)
-      .map(item => sampleCards[item]));
+    newCards.push(Object.keys(sampleCards).map(item => sampleCards[item]));
     const test = shuffle(newCards[0]);
-    // console.log(test);
     //Resetting selected prop to false on repressing the button
     test.forEach(card => {
       card.selected = false;
       card.matched = false;
     });
-
-    var rv={};
+    var randomCards=[];
     for (var i=0; i<test.length; i++)
-      rv[i] = test[i];
-    // console.log(rv);
+      randomCards[i] = test[i];
     this.setState({
-      cards: rv
+      cards: [...randomCards]
     });
   }
 
@@ -168,7 +162,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <div className="memory-cards">
+        <div>
           <CardsContainer
             className="cards-container"
             cards={this.state.cards}
@@ -180,9 +174,9 @@ class App extends Component {
             gameWinner={this.gameWinner}
           />
           <StartPage
-            className={this.gameStarted ? "visible" : "hidden"}
             restartGame={this.restartGame}
             addPlayer={this.addPlayer}
+            gameStarted={this.gameStarted}
             />
           <PlayersContainer
             players={this.state.players}

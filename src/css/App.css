@@ -115,8 +115,110 @@ li.players {
   line-height: 1.5em;
 }
 .hidden {
-    visibility: hidden;
+    display: none;
 }
 .visible {
     display: block;
+}
+
+.cards-container {
+  padding: 0;
+  margin: 0;
+  /*margin-right: 10px;*/
+  list-style: none;
+  border: 1px solid silver;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+
+}
+.wrap    {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.space-between {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.memory-cards {
+  text-align: center;
+  /*background-color: #666;*/
+  /*background-color: yellow;*/
+  /*padding: 20px;*/
+  /*color: black;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 90vh;
+  min-height: 89vh;
+  width: 100vw;
+  min-width: 300px;
+  margin: 0 auto;
+
+}
+.memory-cards > * {
+  /*-webkit-box-flex: 1;*/
+      /*-ms-flex: 1 4 auto;*/
+          /*flex: 1 4 auto;*/
+  /*padding-left: 0.5em;*/
+  /*padding-right: 0.5em;*/
+  /*border: 5px double black;*/
+  /*background-color: white;*/
+  /*-webkit-transition: all 0.3s;*/
+  /*transition: all 0.3s;*/
+  /*box-shadow: 0px 5px 5px rgba(0,0,0,0.1);*/
+  /*overflow: hidden;*/
+}
+.memory-cards > *:first-child {
+  /*-ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: 12vw;
+      flex-basis: 12vw;
+      max-width: 12vw;
+  /*background: purple;*/
+  /*color:white;*/
+  /*border: 5px double black;*/
+}
+.memory-cards > *.second-child {
+  /*-ms-flex-negative: 1;*/
+      /*flex-shrink: 1;*/
+  /*-ms-flex-preferred-size: 76vw;*/
+      /*flex-basis: 76vw;*/
+}
+.memory-cards > *:last-child {
+  /*-ms-flex-negative: 1;*/
+      /*flex-shrink: 1;*/
+  /*-ms-flex-preferred-size: 12vw;*/
+      /*flex-basis: 12vw;*/
+      /*max-width: 12vw;*/
+  /*background: purple;*/
+  /*color:white;*/
+  /*border: 5px double black;*/
+}
+/*END memory-cards layout*/
+/*START CARD component*/
+.cards-space {
+  border: 5px ridge;
+  width: 20%;
+  max-width: 20%;
+  min-height: 11.5vh;
+  max-height: 11.5vh;
+  margin-top: 5px;
+  /*line-height: 150%;*/
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  justify-content: space-around;
+  background-size: cover;
+  font-size: 0.8em;
+}
+.card-name {
+  color: black;
+}
+.cards-space:hover {
+  cursor: pointer;
 }

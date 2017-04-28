@@ -15,7 +15,6 @@ class CardsContainer extends React.Component {
     // e.currentTarget.style.backgroundColor = 'green';
     // e.currentTarget.style.backgroundImage = `url(${card.image})`;
     console.log(card.image);
-
     if(card.matched) {
       e.currentTarget.style.backgroundColor = 'red';
       console.log("already matched");
@@ -38,12 +37,10 @@ class CardsContainer extends React.Component {
     }
     return(
         <li className="cards-space" key={key} name="selected" value={card.selected} onClick={(e)=> this.handleClick(e, key)} style={style}>
-
           <span
             name="selected"
             value={card.selected}>{card.selected || card.matched ? card.name : "Click me"}
           </span>
-
         </li>
       )
   }
@@ -68,7 +65,6 @@ class CardsContainer extends React.Component {
     return(
       <div>
         <button className="start-game-button"onClick={this.props.restartGame}>{this.buttonText}</button>
-
         <ul className="cards-container wrap space-between">
         {Object.keys(this.props.cards).map(this.renderCards)}</ul>
         <br/>

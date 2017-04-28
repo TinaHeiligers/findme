@@ -1,15 +1,11 @@
 import React from 'react';
 
-import Players from './Players';
-
+// eslint-disable-next-line
 class StartPage extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
+    console.log(this.props.gameStarted())
     return(
-    <div>
+    <div className={this.props.gameStarted() ? "hidden": "visible"}>
       <h1 className="top">
         Find Me
       </h1>
