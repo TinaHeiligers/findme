@@ -1,17 +1,13 @@
 import React from 'react';
-
+import AddPlayerFormContainer from '../containers/AddPlayerFormContainer';
 import Players from '../components/Players'
 //gets as props: players, an array
 class PlayersContainer extends React.Component {
-  renderHeading() {
-    console.log("HEADING IN PLAYERS CONTAINER")
-  }
 
-  render() {
+  render(){
     return(
-      <div className="player-heading">
-        {this.renderHeading()}
-      Players Container
+      <div>
+        <AddPlayerFormContainer addPlayer={this.props.addPlayer}/>
         <Players
           players={this.props.players} />
       </div>

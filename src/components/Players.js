@@ -2,22 +2,22 @@ import React from 'react';
 
 //gets as props players passed down from PlayersContainer
 class Players extends React.Component {
-
-  renderPlayer(players) {
+  renderPlayer(player) {
     return(
-      <li key={players.name} className="players">
-        <span>{players.name}</span>
-        <span>players number of matched cards length goes in here</span>
+      <li key={player.name} className="players">
+        <span>{player.name}</span>
+        <span> {player.matchedCards.length}</span>
       </li>
     )
   }
 
   render() {
     return(
+      <div>
       <ul>
-        Players COMPONENT: FIND PROPS BELOW
         {Object.values(this.props.players || []).map(player => this.renderPlayer(player))}
       </ul>
+      </div>
       )
   }
 }

@@ -12,17 +12,36 @@ class App extends Component {
       players: [],
       currentPlayerIndex: 0
     };
-    this.restartGame = this.restartGame.bind(this);
-    this.addPlayer = this.addPlayer.bind(this);
+    this.restartGame = this.restartGame.bind(this)
+    this.gameStarted = this.gameStarted.bind(this)
+    this.addPlayer = this.addPlayer.bind(this)
+    this.gameStarted = this.gameStarted.bind(this)
   }
 
   addPlayer(player) {
-    const players = player ? {...this.state.players} : {matchedCards: [], name: "FakeName"}
-    // const players = {...this.state.players || {name: "Default"}}
-    // const timestamp = Date.now()
-    // players[`player-${timestamp}`] = player
-    players[player] = player
+    const players = this.state.players;
+    players.unshift(player)
     this.setState({ players })
+  }
+  currentPlayer() {
+    return this.state.players[this.state.currentPlayerIndex];
+  }
+
+  scores() {
+    return this.players.map(player => player.matchedCards.length);
+  }
+
+  gameStarted() {
+    return this.state.cards.length > 0;
+  }
+
+  gameOver() {
+    if(!this.gameStarted) {
+      return false;
+    } else {
+      const totalScores = this.scores.reduce((a, b) => a + b, 0);
+      return totalScores === this.totalNumberOfCards;
+    }
   }
 
   restartGame(e) {
@@ -30,10 +49,11 @@ class App extends Component {
     if (e === 'easy') {num = 12}
     else if (e === 'medium') {num = 18}
     else {num = 24}
-    console.log(`RESTARTING GAME on ${e} levels with ${num} cards`);
+    // console.log(`RESTARTING GAME on ${e} levels with ${num} cards`);
     // this.randomizeCards();
     // this.resetPlayers();
   }
+
 
   render() {
     return(
@@ -43,8 +63,11 @@ class App extends Component {
             restartGame={this.restartGame}
             addPlayer={this.addPlayer}/>
           <PlayersContainer
-                      players={this.state.players}
-                      addPlayer={this.addPlayer} />
+            players={this.state.players}
+            addPlayer={this.addPlayer}
+            gameStarted={this.state.gameStarted}
+            currentPlayer={this.currentPlayer()}
+            />
         </div>
       </div>
     );

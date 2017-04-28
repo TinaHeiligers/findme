@@ -71,3 +71,9 @@ button.start-hard-game-button {
   background: -moz-radial-gradient(#ff0000, #8b0000); /* For Firefox 3.6 to 15 */
   background: radial-gradient(#ff0000, #8b0000); /* Standard syntax (must be last) */
 }
+li.players {
+  list-style: none;
+  padding-left: 5px;
+  text-align: left;
+  line-height: 1.5em;
+}
