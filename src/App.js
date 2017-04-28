@@ -61,7 +61,7 @@ class App extends Component {
   }
 
   gameOver() {
-    if(!this.gameStarted) {
+    if(!this.gameStarted()) {
       return false;
     } else {
       const totalScores = this.scores.reduce((a, b) => a + b, 0);
@@ -143,7 +143,7 @@ class App extends Component {
     const currentPlayer = this.retrieveCurrentPlayer();
     currentPlayer.matchedCards.push(...matchedCards);
   }
-
+//gameStarted toggles directly back to false after I click one card.
   gameStarted() {
     return this.state.cards.length > 0;
   }

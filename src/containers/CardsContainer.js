@@ -20,7 +20,7 @@ class CardsContainer extends React.Component {
       console.log("already matched");
       return;
     }
-    const selectedCard = Object.assign({}, card);
+    const selectedCard = [...card];
     this.props.selectCard(key, selectedCard);
     this.props.chosenCardsCheck();
   }
@@ -45,7 +45,7 @@ class CardsContainer extends React.Component {
       )
   }
   get buttonText() {
-    return this.props.gameStarted ? "New Game" : "Load Cards";
+    return this.props.gameStarted() ? "New Game" : "Load Cards";
   }
 
   renderWinner() {
