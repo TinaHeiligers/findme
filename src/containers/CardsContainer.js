@@ -9,9 +9,8 @@ class CardsContainer extends React.Component {
   }
 
 //this handleClick event is in render cards
-  handleClick(e, key) {
-    e.preventDefault();
-    const card = this.props.cards[key];
+  handleClick(e, card) {
+    e.preventDefault();;
     // e.currentTarget.style.backgroundColor = 'green';
     // e.currentTarget.style.backgroundImage = `url(${card.image})`;
     console.log(card.image);
@@ -20,14 +19,12 @@ class CardsContainer extends React.Component {
       console.log("already matched");
       return;
     }
-    const selectedCard = [...card];
-    this.props.selectCard(key, selectedCard);
-    this.props.chosenCardsCheck();
+    this.props.selectCard(card);
+    this.props.selectedCardsCheck();
   }
 
 
-  renderCards(key) {
-    const card = this.props.cards[key];
+  renderCards(card, idx) {
     let style = {}
     if(card.selected || card.matched) {
       style['backgroundImage'] = `url(${card.image})`;
@@ -36,7 +33,7 @@ class CardsContainer extends React.Component {
       style['opacity'] = 0.7;
     }
     return(
-        <li className="cards-space" key={key} name="selected" value={card.selected} onClick={(e)=> this.handleClick(e, key)} style={style}>
+        <li className="cards-space" key={idx} name="selected" value={card.selected} onClick={(e)=> this.handleClick(e, card)} style={style}>
           <span
             name="selected"
             value={card.selected}>{card.selected || card.matched ? card.name : "Click me"}
@@ -66,7 +63,7 @@ class CardsContainer extends React.Component {
       <div>
         <button className="start-game-button"onClick={this.props.restartGame}>{this.buttonText}</button>
         <ul className="cards-container wrap space-between">
-        {Object.keys(this.props.cards).map(this.renderCards)}</ul>
+        {this.props.cards.map(this.renderCards)}</ul>
         <br/>
         <div className="game-over" value={this.props.gameOver}>
           <div>{this.props.gameOver ? "GAME OVER! " : ""}</div>

@@ -13,16 +13,17 @@ class App extends Component {
     super();
     this.state = {
       cards: [],
-      chosenCards: [],
+      selectedCards: [],
       players: [],
       currentPlayerIndex: 0
     };
 
     this.addPlayer = this.addPlayer.bind(this)
     this.restartGame = this.restartGame.bind(this)
-    this.selectCard = this.selectCard.bind(this);
+    this.selectCard = this.selectCard.bind(this)
     this.gameStarted = this.gameStarted.bind(this)
-    this.chosenCardsCheck = this.chosenCardsCheck.bind(this);
+    this.gameOver = this.gameOver.bind(this)
+    this.selectedCardsCheck = this.selectedCardsCheck.bind(this)
   }
 
   addPlayer(player) {
@@ -58,6 +59,11 @@ class App extends Component {
 
   scores() {
     return this.players.map(player => player.matchedCards.length);
+  }
+
+  //gameStarted toggles directly back to false after I click one card.
+  gameStarted() {
+    return this.state.cards.length > 0;
   }
 
   gameOver() {
@@ -98,29 +104,33 @@ class App extends Component {
     });
   }
 
-  selectCard(key, selectedCard) {
-    let chosenCards = this.state.chosenCards.slice(0);
-    const cards = {...this.state.cards};
-    //resetting chosen cards array to add a new turn of card selection
-    if (chosenCards.length === 2) {
-      chosenCards = [];
-      Object.values(cards).forEach(card => card.selected = false);
+  resetSelectedCards() {
+    let selectedCards = this.state.selectedCards.slice(0);
+    const cards = [...this.state.cards];
+    if (selectedCards.length === 2) {
+      selectedCards = [];
+      cards.forEach(card => card.selected = false);
+      this.setState({cards: cards, selectedCards: selectedCards});
     }
-    selectedCard = cards[key];
-    selectedCard.selected = "true";
-    //overwriting the old card with the new one, don't remove this line of code, it's not a duplicate!
-    cards[key] = selectedCard;
-    chosenCards.push(selectedCard);
-    this.setState({cards: cards, chosenCards: chosenCards});
+    return selectedCards;
   }
 
-  chosenCardsCheck() {
-    const cards = {...this.state.cards};
-    const chosenCards = Object.values(cards).filter(item => item.selected === "true");
-    if (chosenCards.length === 2) {
-      if(chosenCards[0].name === chosenCards[1].name) {
-        chosenCards[0].matched = chosenCards[1].matched = true;
-        this.updateScore(chosenCards);
+  selectCard(card) {
+    //resetting chosen cards array to add a new turn of card selection
+    const selectedCards = this.resetSelectedCards()
+    card.selected = true;
+    //overwriting the old card with the new one, don't remove this line of code, it's not a duplicate!
+    selectedCards.push(card);
+    this.setState({selectedCards: selectedCards});
+  }
+
+  selectedCardsCheck() {
+    const cards = [...this.state.cards];
+    const selectedCards = cards.filter(card => card.selected);
+    if (selectedCards.length === 2) {
+      if(selectedCards[0].name === selectedCards[1].name) {
+        selectedCards[0].matched = selectedCards[1].matched = true;
+        this.updateScore(selectedCards);
       } else {
         console.log("Try again!");
       }
@@ -140,20 +150,17 @@ class App extends Component {
     }
 
   updateScore(matchedCards) {
-    const currentPlayer = this.retrieveCurrentPlayer();
+    const currentPlayer = this.currentPlayer();
     currentPlayer.matchedCards.push(...matchedCards);
   }
-//gameStarted toggles directly back to false after I click one card.
-  gameStarted() {
-    return this.state.cards.length > 0;
-  }
+
 
   restartGame(e) {
     let num;
     if (e === 'easy') {num = 12}
     else if (e === 'medium') {num = 18}
     else {num = 24}
-    console.log(`RESTARTING GAME on ${e} levels with ${num} cards`);
+    // console.log(`RESTARTING GAME on ${e} levels with ${num} cards`);
     this.randomizeCards();
     this.resetPlayers();
   }
@@ -167,7 +174,7 @@ class App extends Component {
             className="cards-container"
             cards={this.state.cards}
             selectCard={this.selectCard}
-            chosenCardsCheck={this.chosenCardsCheck}
+            selectedCardsCheck={this.selectedCardsCheck}
             gameStarted={this.gameStarted}
             restartGame={this.restartGame}
             gameOver={this.gameOver}

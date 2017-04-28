@@ -3,7 +3,7 @@ import React from 'react';
 // eslint-disable-next-line
 class StartPage extends React.Component {
   render() {
-    console.log(this.props.gameStarted())
+    console.log("IN START PAGE", this.props.gameStarted())
     return(
     <div className={this.props.gameStarted() ? "hidden": "visible"}>
       <h1 className="top">
