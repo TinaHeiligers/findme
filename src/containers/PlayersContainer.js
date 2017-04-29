@@ -5,14 +5,15 @@ import Players from '../components/Players'
 class PlayersContainer extends React.Component {
 
   render(){
+    if (this.props.gameStarted()) {
+      return null
+      }
     return(
       <div>
         <AddPlayerFormContainer
           addPlayer={this.props.addPlayer}
           players={this.props.players}
           />
-        <Players
-          players={this.props.players} />
       </div>
     )
   }

@@ -1,0 +1,19 @@
+pregame:
+
+
+
+Capture players
+Choose Game difficulty
+
+next:
+gameStarted, can test for this
+cards show
+cards selected
+switches between players
+actually gaming
+
+final state:
+game over
+Player wins
+Show win screan
+Show new game buttons

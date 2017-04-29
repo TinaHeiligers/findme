@@ -41,9 +41,9 @@ class CardsContainer extends React.Component {
         </li>
       )
   }
-  get buttonText() {
-    return this.props.gameStarted() ? "New Game" : "Load Cards";
-  }
+  // get buttonText() {
+  //   return this.props.gameStarted() ? "New Game" : "Load Cards";
+  // }
 
   renderWinner() {
     if(!this.props.gameOver()) {
@@ -59,9 +59,11 @@ class CardsContainer extends React.Component {
   }
 
   render() {
+    if (!this.props.gameStarted()) {
+      return null
+    }
     return(
       <div>
-        <button className="start-game-button"onClick={this.props.restartGame}>{this.buttonText}</button>
         <ul className="cards-container wrap space-between">
         {this.props.cards.map(this.renderCards)}</ul>
         <br/>

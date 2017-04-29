@@ -1,11 +1,16 @@
 import React from 'react';
 
 class Players extends React.Component {
+
+  message(player) {
+    return this.props.gameStarted() ? player.matchedCards.length : "Welcome!"
+  }
+
   renderPlayer(player) {
     return(
       <li key={player.name} className="players">
         <span>{player.name}</span>
-        <span> {player.matchedCards.length}</span>
+        <span> {this.message(player)}</span>
       </li>
     )
   }
@@ -14,7 +19,7 @@ class Players extends React.Component {
     return(
       <div>
       <ul>
-        {Object.values(this.props.players || []).map(player => this.renderPlayer(player))}
+        {(this.props.players || []).map(player => this.renderPlayer(player))}
       </ul>
       </div>
       )

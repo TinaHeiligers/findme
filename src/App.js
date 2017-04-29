@@ -4,6 +4,8 @@ import { shuffle } from './helpers';
 import sampleCards from './sample-cards';
 
 import StartPage from './components/StartPage';
+import Game from './components/Game';
+import Players from './components/Players';
 
 import PlayersContainer from './containers/PlayersContainer';
 import CardsContainer from './containers/CardsContainer';
@@ -24,7 +26,12 @@ class App extends Component {
     this.gameStarted = this.gameStarted.bind(this)
     this.gameOver = this.gameOver.bind(this)
     this.gameWinner = this.gameWinner.bind(this)
+    this.preGame = this.preGame.bind(this)
     this.selectedCardsCheck = this.selectedCardsCheck.bind(this)
+  }
+
+  preGame() {
+    return !this.gameStarted() && ! this.gameOver()
   }
 
   addPlayer(player) {
@@ -175,17 +182,32 @@ class App extends Component {
             restartGame={this.restartGame}
             gameOver={this.gameOver}
             gameWinner={this.gameWinner}
+            preGame={this.preGame}
           />
           <StartPage
             restartGame={this.restartGame}
             addPlayer={this.addPlayer}
             gameStarted={this.gameStarted}
+            preGame={this.preGame}
+            />
+            <Game
+            gameStarted={this.gameStarted}
+            restartGame={this.restartGame}
+            players={this.state.players}
+            />
+          <Players
+            players={this.state.players}
+            addPlayer={this.addPlayer}
+            gameStarted={this.gameStarted}
+            currentPlayer={this.currentPlayer()}
+            preGame={this.preGame}
             />
           <PlayersContainer
             players={this.state.players}
             addPlayer={this.addPlayer}
-            gameStarted={this.state.gameStarted}
+            gameStarted={this.gameStarted}
             currentPlayer={this.currentPlayer()}
+            preGame={this.preGame}
             />
         </div>
       </div>
