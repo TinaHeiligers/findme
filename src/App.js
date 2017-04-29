@@ -84,11 +84,11 @@ class App extends Component {
         .map(player => player.name)
   }
 
-  randomizeCards(){
+  randomizeCards(num){
     if(this.state.players.length === 0) {
       return;
     }
-    const newCards = sampleCards.concat(sampleCards).map(card => Object.assign({}, card));//making dups
+    const newCards = sampleCards.slice(0, num).concat(sampleCards.slice(0, num)).map(card => Object.assign({}, card));//making dups
     const shuffledCards = shuffle(newCards);
     //Resetting selected prop to false on repressing the button
     shuffledCards.forEach(card => {
@@ -153,11 +153,11 @@ class App extends Component {
 
   restartGame(e) {
     let num;
-    if (e === 'easy') {num = 12}
-    else if (e === 'medium') {num = 18}
-    else {num = 24}
-    // console.log(`RESTARTING GAME on ${e} levels with ${num} cards`);
-    this.randomizeCards();
+    if (e === 'easy') {num = 1}
+    else if (e === 'medium') {num = 3}
+    else {num = 6}
+    console.log(`RESTARTING GAME on ${e} levels with ${num} cards`);
+    this.randomizeCards(num);
     this.resetPlayers();
   }
 
