@@ -37,13 +37,16 @@ class Players extends React.Component {
   }
 
   render() {
+    if (!this.props.gameStarted()) {
+      return null;
+    }
     return(
       <div className="bottom-right">
-      <ul>
-        {(this.props.players || []).map(player => this.renderPlayer(player))}
-      </ul>
-      <div className="winner">{this.currentPlayerPrompt()}</div>
-      <div className="winner">{this.renderWinner()}</div>
+        <ul>
+          {(this.props.players || []).map(player => this.renderPlayer(player))}
+        </ul>
+        <div className="winner">{this.currentPlayerPrompt()}</div>
+        <div className="winner">{this.renderWinner()}</div>
       </div>
       )
   }

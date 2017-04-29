@@ -72,9 +72,61 @@
 }
 /*END MAIN APP*/
 
-/*START rendering cards in APP*/
+/*START StartPage*/
+.startPageMainDiv {
+  background-color: orange;
+  margin: 10px;
+  border-style: groove;
+  border-color:gray;
+  height: 80vh;
+}
+.startPageMainDiv h1, h2, div{
+  text-align: center;
+}
+.player-edit {
+  text-align: center;
+  margin-bottom: 20px;
+  border-width:3px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.add-me-button {
+  padding: 5px;
+  color: black;
+  border-radius: 10px;
+  background: blue; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(white, blue); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(white, blue); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(white, blue); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(white, blue);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  border-style: inset;
+  position: absolute;
+  bottom: 165px;
+  left: 80px;
+}
+.visible {
+  height: 2em;
+  padding: 2px;
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 10px;
+  border-style: inset;
+}
+.hidden {
+    display: none;
+}
+
 .start-buttons {
-  float: right;
+  /*float: right;*/
+  position: relative;
   padding-right:10px;
 }
 button.start-easy-game-button {
@@ -127,19 +179,7 @@ button.start-hard-game-button {
   background: -moz-radial-gradient(#ff0000, #8b0000); /* For Firefox 3.6 to 15 */
   background: radial-gradient(#ff0000, #8b0000); /* Standard syntax (must be last) */
 }
-.player-edit {
-  margin-bottom: 20px;
-  border-width:3px;
-  margin-left: 20px;
-  margin-top: 20px;
-  padding: 10px;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
+
 
 li.players {
   list-style: none;
@@ -147,12 +187,8 @@ li.players {
   text-align: left;
   line-height: 1.5em;
 }
-.hidden {
-    display: none;
-}
-.visible {
-    display: block;
-}
+/*END StartPage*/
+
 .winner {
   position: relative;
   bottom: 100px;

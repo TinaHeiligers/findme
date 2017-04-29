@@ -1,5 +1,5 @@
 import React from 'react';
-import AddPlayerFormContainer from '../containers/AddPlayerFormContainer';
+
 //gets as props: players, an array
 class PlayersContainer extends React.Component {
 
@@ -9,10 +9,7 @@ class PlayersContainer extends React.Component {
       }
     return(
       <div>
-        <AddPlayerFormContainer
-          addPlayer={this.props.addPlayer}
-          players={this.props.players}
-          />
+
       </div>
     )
   }

@@ -191,6 +191,7 @@ class App extends Component {
                     />
           <StartPage
             restartGame={this.restartGame}
+            players={this.state.players}
             addPlayer={this.addPlayer}
             gameStarted={this.gameStarted}
             preGame={this.preGame}
@@ -211,13 +212,6 @@ class App extends Component {
             preGame={this.preGame}
             totalScores={this.totalScores()}
             cards={this.state.cards}
-            />
-          <PlayersContainer className="bottom-rigth"
-            players={this.state.players}
-            addPlayer={this.addPlayer}
-            gameStarted={this.gameStarted}
-            currentPlayer={this.currentPlayer()}
-            preGame={this.preGame}
             />
       </div>
     );
