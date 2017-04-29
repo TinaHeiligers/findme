@@ -46,15 +46,15 @@ class CardsContainer extends React.Component {
   }
 
   renderWinner() {
-    if(!this.props.gameOver) {
+    if(!this.props.gameOver()) {
       return null;
-    } else if(this.props.gameWinner.length > 1) {
-      const gameWinnerNames = [...this.props.gameWinner];
+    } else if(this.props.gameWinner().length > 1) {
+      const gameWinnerNames = [...this.props.gameWinner()];
       const lastPerson = gameWinnerNames.pop();
       const otherNames = gameWinnerNames.join(', ');
       return `Congratulations ${otherNames} and ${lastPerson}`;
     } else {
-      return `Congratulations ${this.props.gameWinner[0]}`;
+      return `Congratulations ${this.props.gameWinner()[0]}`;
     }
   }
 

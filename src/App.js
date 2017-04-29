@@ -23,6 +23,7 @@ class App extends Component {
     this.selectCard = this.selectCard.bind(this)
     this.gameStarted = this.gameStarted.bind(this)
     this.gameOver = this.gameOver.bind(this)
+    this.gameWinner = this.gameWinner.bind(this)
     this.selectedCardsCheck = this.selectedCardsCheck.bind(this)
   }
 
@@ -68,41 +69,34 @@ class App extends Component {
 
   gameOver() {
     if(!this.gameStarted()) {
-      console.log("IN GAME OVER, :", !this.gameStarted())
       return false;
     } else {
       const totalScores = this.scores().reduce((a, b) => a + b, 0);
-      console.log("IN GAME OVER, else condition :", totalScores, this.totalNumberOfCards())
       return totalScores === this.totalNumberOfCards();
     }
   }
 
   gameWinner() {
-    const maxScore = Math.max(...this.scores);
+    const maxScore = Math.max(...this.scores());
     //retrieve the player(s) names who have this score
-    return this.players
+    return this.state.players
         .filter(player => player.matchedCards.length === maxScore)
         .map(player => player.name)
   }
 
   randomizeCards(){
-    if(Object.keys(this.state.players).length === 0) {
-      console.log("You need a player");
+    if(this.state.players.length === 0) {
       return;
     }
-    const newCards = [];
-    newCards.push(Object.keys(sampleCards).map(item => sampleCards[item]));
-    const test = shuffle(newCards[0]);
+    const newCards = sampleCards.concat(sampleCards).map(card => Object.assign({}, card));//making dups
+    const shuffledCards = shuffle(newCards);
     //Resetting selected prop to false on repressing the button
-    test.forEach(card => {
+    shuffledCards.forEach(card => {
       card.selected = false;
       card.matched = false;
     });
-    var randomCards=[];
-    for (var i=0; i<test.length; i++)
-      randomCards[i] = test[i];
     this.setState({
-      cards: [...randomCards]
+      cards: [...shuffledCards]
     });
   }
 
