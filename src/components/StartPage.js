@@ -43,13 +43,21 @@ class StartPage extends React.Component {
       </h1>
       <h2>Find my matching partner in all the cards!</h2>
       <div>
-          <p>{this.message(this.props.players.length)}</p>
-          <form ref={(input) => this.playerForm = input} className="player-edit" onSubmit={(e) => this.createPlayer(e)}>
-            <button className={this.props.players.length === 2 ? "hidden": "add-me-button"} type="Submit">Add Me</button>
-            <input className={this.props.players.length === 2 ? "hidden": "visible"} ref={(input) => this.name = input} type="text" placeholder="Player Name"/>
-          </form>
-        </div>
-        <div>{this.props.players.map((player) => this.playerWelcome(player))}</div>
+        <p>{this.message(this.props.players.length)}</p>
+        <form ref={(input) => this.playerForm = input}
+              className={this.props.players.length === 2 ? "hidden": "player-edit"}
+              onSubmit={(e) => this.createPlayer(e)}>
+          <div className="name-input-container">
+            <input className="name-input"
+                  ref={(input) => this.name = input}
+                  type="text" placeholder="Player Name"/>
+          </div>
+          <div className="add-me-button-container">
+            <button className="add-me-button" type="Submit">Add Me</button>
+          </div>
+        </form>
+      </div>
+      <div className="player-welcome">{this.props.players.map((player) => this.playerWelcome(player))}</div>
       <div className="start-buttons">
         <button className="start-easy-game-button" name="easy" onClick={(e) => this.props.restartGame(e.target.name)}>easy</button>
         <button className="start-medium-game-button" name="medium" onClick={(e) => this.props.restartGame(e.target.name)}>medium</button>
@@ -62,3 +70,4 @@ class StartPage extends React.Component {
 
 
 export default StartPage;
+// {this.props.players.length === 2 ? "hidden": "add-me-button"}

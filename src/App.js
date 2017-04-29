@@ -178,6 +178,13 @@ class App extends Component {
   render() {
     return(
       <div>
+          <StartPage
+            restartGame={this.restartGame}
+            players={this.state.players}
+            addPlayer={this.addPlayer}
+            gameStarted={this.gameStarted}
+            preGame={this.preGame}
+            />
           <CardsContainer
             className="cards-container"
             cards={this.state.cards}
@@ -187,13 +194,6 @@ class App extends Component {
             restartGame={this.restartGame}
             gameOver={this.gameOver}
             gameWinner={this.gameWinner}
-            preGame={this.preGame}
-                    />
-          <StartPage
-            restartGame={this.restartGame}
-            players={this.state.players}
-            addPlayer={this.addPlayer}
-            gameStarted={this.gameStarted}
             preGame={this.preGame}
             />
           <Game

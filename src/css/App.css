@@ -1,3 +1,6 @@
+html * {
+  font-family: 'Baloo', sans-serif;
+}
 /*START MAIN APP*/
 .clearfix:after {
   content: "";
@@ -5,9 +8,6 @@
   clear: both;
 }
 
-h1, h2, h3, div, p {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
 .App {
   text-align: center;
 
@@ -84,17 +84,18 @@ h1, h2, h3, div, p {
 
 /*START StartPage*/
 .startPageMainDiv {
-  position: relative;
+  position: absolute;
+  top:50px;
+  left:50px;
+  bottom:50px;
+  right:50px;
   background-color: orange;
-  margin: 5vh;
-  border-style: groove;
-  border-color:gray;
-  height: 80vh;
+  border-radius: 5px;
+
 }
 .startPageMainDiv h1 {
   text-align: center;
   font-size: 5em;
-  font-family: "Comic Sans MS", cursive, sans-serif;
   margin: 0;
 }
 .startPageMainDiv h2 {
@@ -105,11 +106,10 @@ h1, h2, h3, div, p {
 }
 .startPageMainDiv p {
   text-align: center;
-  font-size: 1em;
+  font-size: 3vh;
 }
 .player-edit {
   font-size: 2em;
-  font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;
   margin-bottom: 20px;
   border-width:3px;
@@ -126,33 +126,28 @@ h1, h2, h3, div, p {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;*/
 }
-.add-me-button {
-  position: absolute;
-  top: 37%;
-  left: 9%;
-  height: 4em;
-  padding: 5px;
-  color: black;
-  border-radius: 10px;
-  background: blue; /* For browsers that do not support gradients */
-  background: -webkit-radial-gradient(white, blue); /* Safari 5.1 to 6.0 */
-  background: -o-radial-gradient(white, blue); /* For Opera 11.6 to 12.0 */
-  background: -moz-radial-gradient(white, blue); /* For Firefox 3.6 to 15 */
-  background: radial-gradient(white, blue);
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  border-style: inset;
 
-}
-.visible {
-  height: 2em;
-  padding: 2px;
+.name-input {
+  font-size: 5vh;
   text-align: center;
-  margin-right: 5px;
   border-radius: 10px;
   border-style: inset;
-  position: absolute;
-  top: 28%;
-  left: 5%;
+  width: 80%;
+}
+
+.add-me-button {
+    padding: 5px;
+    padding: 1vh;
+    font-size: 5vh;
+    margin: 1vh;
+    border-radius: 10px;
+    background: blue;
+    background: radial-gradient(white, blue);
+    border-style: outset;
+}
+.player-welcome {
+  text-align: center;
+  font-size: 4vh;
 }
 .hidden {
     display: none;
@@ -168,7 +163,6 @@ h1, h2, h3, div, p {
 }
 button.start-easy-game-button {
   text-align: center;
-  font-family: "Comic Sans MS", cursive, sans-serif;
   color: black;
   border-radius: 50px;
   margin-top: 5px;
@@ -185,7 +179,6 @@ button.start-easy-game-button {
 }
 button.start-medium-game-button {
   text-align: center;
-  font-family: "Comic Sans MS", cursive, sans-serif;
   color: black;
   border-radius: 50px;
   margin-top: 5px;
@@ -203,7 +196,6 @@ button.start-medium-game-button {
 }
 button.start-hard-game-button {
   text-align: center;
-  font-family: "Comic Sans MS", cursive, sans-serif;
   color: black;
   border-radius: 50px;
   margin-top: 5px;
@@ -237,7 +229,6 @@ li.players {
   -webkit-transform: rotate(-15deg); /* Chrome, Safari, Opera */
   transform: rotate(-15deg);
   font-size: 1em;
-  font-family: "Comic Sans MS", cursive, sans-serif;
   color: black;
   /*trying animation to make text DO SOMETHING when it appears*/
   animation: fadein 2s;
@@ -369,7 +360,6 @@ li.players {
   -webkit-transform: rotate(-15deg); /* Chrome, Safari, Opera */
   transform: rotate(-15deg);
   font-size: 3em;
-  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 /*START GAME component*/
 .game {
