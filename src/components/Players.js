@@ -45,7 +45,7 @@ class Players extends React.Component {
         <ul>
           {(this.props.players || []).map(player => this.renderPlayer(player))}
         </ul>
-        <div className="winner">{this.currentPlayerPrompt()}</div>
+        <div className="winner hidden">{this.currentPlayerPrompt()}</div>
         <div className="winner">{this.renderWinner()}</div>
       </div>
       )

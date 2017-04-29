@@ -10,9 +10,7 @@ class CardsContainer extends React.Component {
 
 //this handleClick event is in render cards
   handleClick(e, card) {
-    e.preventDefault();;
-    // e.currentTarget.style.backgroundColor = 'green';
-    // e.currentTarget.style.backgroundImage = `url(${card.image})`;
+    e.preventDefault();
     console.log(card.image);
     if(card.matched) {
       e.currentTarget.style.backgroundColor = 'red';
@@ -22,23 +20,28 @@ class CardsContainer extends React.Component {
     this.props.selectCard(card);
     this.props.selectedCardsCheck();
   }
-
+  cardClassName(card) {
+    let array = ["card"];
+    if (card.selected) {
+      array.push("selected")
+    } else if (card.matched) {
+      array.push("matched")
+    }
+    return array.join(" ");
+  }
 
   renderCards(card, idx) {
-    let style = {}
-    if(card.selected || card.matched) {
-      style['backgroundImage'] = `url(${card.image})`;
-    }
-    if(card.matched) {
-      style['opacity'] = 0.7;
-    }
+
     return(
-        <li className="cards-space" key={idx} name="selected" value={card.selected} onClick={(e)=> this.handleClick(e, card)} style={style}>
-          <span
-            name="selected"
-            value={card.selected}>{card.selected || card.matched ? card.name : "Click me"}
-          </span>
-        </li>
+
+      <div className="card-container" key={idx} name="selected" value={card.selected} onClick={(e) => this.handleClick(e, card)}>
+        <div className={this.cardClassName(card)}>
+          <div className="face front" style={{backgroundImage:`url(${card.image})`}}>
+            <div className="name">{card.name}</div>
+          </div>
+          <div className="face back"></div>
+        </div>
+      </div>
       )
   }
 
@@ -48,11 +51,10 @@ class CardsContainer extends React.Component {
     }
     return(
       <div className="top">
-        <div className="game-over" value={this.props.gameOver()}>
+        <div className="game-over hidden" value={this.props.gameOver()}>
             <div>{this.props.gameOver() ? "GAME OVER! " : ""}</div>
         </div>
-        <ul className="cards-container wrap space-between">
-        {this.props.cards.map(this.renderCards)}</ul>
+        {this.props.cards.map(this.renderCards)}
         <br/>
       </div>
       )
@@ -60,3 +62,9 @@ class CardsContainer extends React.Component {
 }
 
 export default CardsContainer;
+        // <li className="cards-space" key={idx} name="selected" value={card.selected} onClick={(e)=> this.handleClick(e, card)} style={style}>
+        //           <span
+        //             name="selected"
+        //             value={card.selected}>{card.selected || card.matched ? card.name : "Click me"}
+        //           </span>
+        //         </li>

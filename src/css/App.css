@@ -1,6 +1,9 @@
 html * {
   font-family: 'Baloo', sans-serif;
 }
+body {
+  background-image: url('./images/table.jpg');
+}
 /*START MAIN APP*/
 .clearfix:after {
   content: "";
@@ -57,40 +60,52 @@ html * {
   height:100%;
 }
 .top {
-  background-color: orange;
-  top: 0;
-  bottom: 200px;
-  left: 0;
-  right: 0;
-  margin:10px 10px 0 10px;/* top | right | bottom | left */
+      /* background-color: orange; */
+    top: 0;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+    /* margin: 10px 10px 0 10px; */
+    position: absolute;
+    padding: 1vh;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
 }
 .bottom-left {
-  background-color: blue;
-  height: 200px;
-  left: 0;
-  width: 200px;
-  bottom: 0;
-  margin:0px 10px 10px 10px;/* top | right | bottom | left */
+  position: absolute;
+    background-color: blue;
+    height: 200px;
+    left: 0;
+    width: 200px;
+    bottom: 0;
+    margin: 4px 10px 10px 10px;
+    padding: 1vh;
 }
 .bottom-right {
-  background-color: green;
-  height: 200px;
-  left: 200px;
-  right: 0;
-  bottom: 0;
-  margin:0px 10px 10px 0px;/* top | right | bottom | left */
+      position: absolute;
+    background-color: green;
+    /* left: 191px; */
+    left: 240px;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    margin: 0px 10px 10px 0px;
+    padding: 1vh;
 }
 /*END MAIN APP*/
 
 /*START StartPage*/
 .startPageMainDiv {
+  box-shadow: 0 0 10px black;
   position: absolute;
   top:50px;
   left:50px;
   bottom:50px;
   right:50px;
-  background-color: orange;
   border-radius: 5px;
+  background-color: #987;
+  opacity: 0.7;
 
 }
 .startPageMainDiv h1 {
@@ -154,12 +169,12 @@ html * {
 }
 
 .start-buttons {
-  /*float: right;*/
-  position: absolute;
-  padding-right:10px;
-  bottom: 75px;
-  right: 100px;
-
+    /* float: right; */
+    /* position: absolute; */
+    /* padding-right: 10px; */
+    /* bottom: 75px; */
+    /* right: 100px; */
+    text-align: center;
 }
 button.start-easy-game-button {
   text-align: center;
@@ -293,41 +308,71 @@ li.players {
 /*END rendering cards in APP*/
 
 /*START CARDS-CONTAINER*/
-.cards-container {
-  padding: 0;
-  margin: 0;
-  /*margin-right: 10px;*/
-  list-style: none;
-  border: 1px solid silver;
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-
-}
-.wrap    {
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-.space-between {
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-}
-.memory-cards {
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-height: 90vh;
-  min-height: 89vh;
-  width: 100vw;
-  min-width: 300px;
-  margin: 0 auto;
-
-}
+.card-container {
+    position: relative;
+    width: 10%;
+    height: 25%;
+    margin: 1.25% 1% 1.25% 1%;
+    perspective: 800px;
+    /*float: left;*/
+    display: inline-block;
+    flex: 1 1 10%;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transform-style: preserve-3d;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border-width: 0.1%;
+    border-color: white;
+    border-style: solid;
+    background-color: white;
+    box-shadow: 0 0 3px black;
+    overflow: hidden;
+    backface-visibility: hidden;
+  }
+  .card .front {
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+  }
+  .card .back {
+    background-image: url(./images/card-back.png);
+    background-repeat: repeat;
+    background-size: unset;
+  }
+  .card .name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    opacity: 0.8;
+    font-family: 'Baloo', sans-serif;
+    text-shadow: 0 0 2px black;
+  }
+  .card.selected {
+    transform: rotateY(180deg) scale(1.05);
+  }
+  .card.selected .front {
+    border-color: gold;
+  }
+  .card.matched {
+    transform: rotateY(180deg);
+  }
 
 /*END memory-cards layout*/
 
