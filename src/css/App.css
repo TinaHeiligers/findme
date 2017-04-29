@@ -1,3 +1,4 @@
+/*START MAIN APP*/
 .App {
   text-align: center;
 }
@@ -38,6 +39,7 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+/*END MAIN APP*/
 
 /*START rendering cards in APP*/
 .start-buttons {
@@ -120,7 +122,79 @@ li.players {
 .visible {
     display: block;
 }
+.winner {
+  position: relative;
+  bottom: 100px;
+  text-align: center;
+  -ms-transform: rotate(-15deg); /* IE 9 */
+  -webkit-transform: rotate(-15deg); /* Chrome, Safari, Opera */
+  transform: rotate(-15deg);
+  font-size: 1em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: black;
+  /*trying animation to make text DO SOMETHING when it appears*/
+  animation: fadein 2s;
+  animation-iteration-count: 3;
+  animation-duration: 2s;
+  animation-fill-mode: both;
 
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s;
+  /*trying transition to make text DO SOMETHING when it appears*/
+  /*-webkit-transition: color 2s, font-size 1s ease;
+   -moz-transition: color 2s, font-size 1s ease;
+     -o-transition: color 2s, font-size 1s ease;
+        transition: color 2s, font-size 1s ease;*/
+}
+@keyframes fadein {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/*.winner::before {
+  font-size: 1em;
+  color: black;
+}
+.winner::after {
+  font-size: 2em;
+  color: blue;
+}*/
+.font-grow {
+  font-size: 3em;
+  color: blue;
+}
+/*END rendering cards in APP*/
+
+/*START CARDS-CONTAINER*/
 .cards-container {
   padding: 0;
   margin: 0;
@@ -223,7 +297,16 @@ li.players {
 .cards-space:hover {
   cursor: pointer;
 }
-
+.game-over {
+  position: relative;
+  top: 50px;
+  text-align: center;
+  -ms-transform: rotate(-15deg); /* IE 9 */
+  -webkit-transform: rotate(-15deg); /* Chrome, Safari, Opera */
+  transform: rotate(-15deg);
+  font-size: 3em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
 /*START GAME component*/
 .game {
   position: absolute;
@@ -259,3 +342,4 @@ button.start-game-button {
   background: radial-gradient(#00e600, #006400); /* Standard syntax (must be last) */
 }
 /*END GAME component*/
+

@@ -16,4 +16,43 @@ final state:
 game over
 Player wins
 Show win screan
-Show new game buttons
+DONE: Show new game buttons
+DONE: New game sets cards to default 12: render options Choose Game difficulty
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Abs</title>
+  <style>
+  div {
+    position: absolute;
+  }
+  .top {
+    background-color: red;
+    top: 0;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+  }
+  .bottom-left {
+    background-color: blue;
+    height: 200px;
+    left: 0;
+    width: 200px;
+    bottom: 0;
+  }
+  .bottom-right {
+    background-color: green;
+    height: 200px;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+  }
+  </style>
+</head>
+<body>
+  <div class='top'></div>
+  <div class='bottom-left'></div>
+  <div class='bottom-right'></div>
+</body>
+</html>

@@ -41,22 +41,6 @@ class CardsContainer extends React.Component {
         </li>
       )
   }
-  // get buttonText() {
-  //   return this.props.gameStarted() ? "New Game" : "Load Cards";
-  // }
-
-  renderWinner() {
-    if(!this.props.gameOver()) {
-      return null;
-    } else if(this.props.gameWinner().length > 1) {
-      const gameWinnerNames = [...this.props.gameWinner()];
-      const lastPerson = gameWinnerNames.pop();
-      const otherNames = gameWinnerNames.join(', ');
-      return `Congratulations ${otherNames} and ${lastPerson}`;
-    } else {
-      return `Congratulations ${this.props.gameWinner()[0]}`;
-    }
-  }
 
   render() {
     if (!this.props.gameStarted()) {
@@ -64,13 +48,12 @@ class CardsContainer extends React.Component {
     }
     return(
       <div>
+        <div className="game-over" value={this.props.gameOver()}>
+            <div>{this.props.gameOver() ? "GAME OVER! " : ""}</div>
+        </div>
         <ul className="cards-container wrap space-between">
         {this.props.cards.map(this.renderCards)}</ul>
         <br/>
-        <div className="game-over" value={this.props.gameOver}>
-          <div>{this.props.gameOver() ? "GAME OVER! " : ""}</div>
-          <div className="winner">{this.renderWinner()}</div>
-        </div>
       </div>
       )
   }

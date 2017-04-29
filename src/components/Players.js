@@ -14,6 +14,27 @@ class Players extends React.Component {
       </li>
     )
   }
+  currentPlayerPrompt() {
+    if (!this.props.gameStarted()) {
+      return null
+    } else if(!this.props.gameOver()) {
+        return (`${this.props.currentPlayer.name}, it's your turn.`)
+    } else {
+      return null;
+    }
+  }
+  renderWinner() {
+    if (!this.props.gameOver()) {
+      return null;
+    } else if (this.props.gameWinner().length > 1) {
+      const gameWinnerNames = [...this.props.gameWinner()];
+      const lastPerson = gameWinnerNames.pop();
+      const otherNames = gameWinnerNames.join(', ');
+      return `Congratulations ${otherNames} and ${lastPerson}!!!`;
+    } else {
+      return `Congratulations ${this.props.gameWinner()[0]}!!!`;
+    }
+  }
 
   render() {
     return(
@@ -21,6 +42,8 @@ class Players extends React.Component {
       <ul>
         {(this.props.players || []).map(player => this.renderPlayer(player))}
       </ul>
+      <div className="winner">{this.currentPlayerPrompt()}</div>
+      <div className="winner font-grow">{this.renderWinner()}</div>
       </div>
       )
   }

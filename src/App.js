@@ -163,7 +163,6 @@ class App extends Component {
     if (e === 'easy') {num = 1}
     else if (e === 'medium') {num = 3}
     else {num = 6}
-    console.log(`RESTARTING GAME on ${e} levels with ${num} cards`);
     this.randomizeCards(num);
     this.resetPlayers();
   }
@@ -193,13 +192,16 @@ class App extends Component {
             <Game
             gameStarted={this.gameStarted}
             restartGame={this.restartGame}
+            gameOver={this.gameOver}
             players={this.state.players}
             />
           <Players
             players={this.state.players}
             addPlayer={this.addPlayer}
             gameStarted={this.gameStarted}
+            gameOver={this.gameOver}
             currentPlayer={this.currentPlayer()}
+            gameWinner={this.gameWinner}
             preGame={this.preGame}
             />
           <PlayersContainer
