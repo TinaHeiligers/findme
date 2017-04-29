@@ -1,6 +1,16 @@
 /*START MAIN APP*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h1, h2, h3, div, p {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -74,16 +84,32 @@
 
 /*START StartPage*/
 .startPageMainDiv {
+  position: relative;
   background-color: orange;
-  margin: 10px;
+  margin: 5vh;
   border-style: groove;
   border-color:gray;
   height: 80vh;
 }
-.startPageMainDiv h1, h2, div{
+.startPageMainDiv h1 {
   text-align: center;
+  font-size: 5em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin: 0;
+}
+.startPageMainDiv h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+
+}
+.startPageMainDiv p {
+  text-align: center;
+  font-size: 1em;
 }
 .player-edit {
+  font-size: 2em;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;
   margin-bottom: 20px;
   border-width:3px;
@@ -91,13 +117,20 @@
   margin-top: 20px;
   padding: 10px;
   overflow: hidden;
-  display: -webkit-box;
+  /*position: absolute;
+  top: 28%;
+  left: 5%;*/
+  /*display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+      flex-wrap: wrap;*/
 }
 .add-me-button {
+  position: absolute;
+  top: 37%;
+  left: 9%;
+  height: 4em;
   padding: 5px;
   color: black;
   border-radius: 10px;
@@ -108,9 +141,7 @@
   background: radial-gradient(white, blue);
   font-family: "Comic Sans MS", cursive, sans-serif;
   border-style: inset;
-  position: absolute;
-  bottom: 165px;
-  left: 80px;
+
 }
 .visible {
   height: 2em;
@@ -119,6 +150,9 @@
   margin-right: 5px;
   border-radius: 10px;
   border-style: inset;
+  position: absolute;
+  top: 28%;
+  left: 5%;
 }
 .hidden {
     display: none;
@@ -126,19 +160,23 @@
 
 .start-buttons {
   /*float: right;*/
-  position: relative;
+  position: absolute;
   padding-right:10px;
+  bottom: 75px;
+  right: 100px;
+
 }
 button.start-easy-game-button {
   text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   color: black;
   border-radius: 50px;
   margin-top: 5px;
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   padding: 0.1em 0.5em;
   margin-right: 5px;
-  font-size: 0.7em;
+  font-size: 1.5em;
   background: green; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#00e600, #006800); /* Safari 5.1 to 6.0 */
   background: -o-radial-gradient(#00e600, #006800); /* For Opera 11.6 to 12.0 */
@@ -147,15 +185,16 @@ button.start-easy-game-button {
 }
 button.start-medium-game-button {
   text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   color: black;
   border-radius: 50px;
   margin-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   padding: 0.1em 0.5em;
-  font-size: 0.7em;
+  font-size: 1.5em;
   background: orange; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#ff8c00, #cd6600); /* Safari 5.1 to 6.0 */
   background: -o-radial-gradient(#ff8c00, #cd6600); /* For Opera 11.6 to 12.0 */
@@ -164,15 +203,16 @@ button.start-medium-game-button {
 }
 button.start-hard-game-button {
   text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   color: black;
   border-radius: 50px;
   margin-top: 5px;
   margin-left:5px;
   margin-left: 5px;
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   padding: 0.1em 0.5em;
-  font-size: 0.7em;
+  font-size: 1.5em;
   background: red; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#ff0000, #8b0000); /* Safari 5.1 to 6.0 */
   background: -o-radial-gradient(#ff0000, #8b0000); /* For Opera 11.6 to 12.0 */
