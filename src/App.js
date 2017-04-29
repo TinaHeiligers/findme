@@ -178,7 +178,6 @@ class App extends Component {
   render() {
     return(
       <div>
-        <div>
           <CardsContainer
             className="cards-container"
             cards={this.state.cards}
@@ -220,7 +219,6 @@ class App extends Component {
             currentPlayer={this.currentPlayer()}
             preGame={this.preGame}
             />
-        </div>
       </div>
     );
   }
