@@ -2,85 +2,113 @@
 //note that I repeat the cards in this array with different keys but the same object for the key.
 const cards = [
   {
-      name: 'walrus',
-      image: require('./css/images/kelp.jpg'),
+      name: 'bear',
+      image: require('./css/images/bear.png'),
       status: 'hidden',
       selected: false,
       matched: false
     },
   {
-      name: 'hat',
-      image: require('./css/images/kelp.jpg'),
+      name: 'cat',
+      image: require('./css/images/cat.png'),
       status: 'hidden',
       selected: false,
       matched: false
     },
   {
-      name: 'worm',
-      image: require('./css/images/kelp.jpg'),
+      name: 'elephant',
+      image: require('./css/images/elephant.png'),
       status: 'hidden',
       selected: false,
       matched: false,
     },
   {
-      name: 'tigger',
-      image: require('./css/images/kelp.jpg'),
-      status: 'hidden',
-      selected: false,
-      matched: false
-    },
-  {
-      name: 'goofie',
-      image: require('./css/images/kelp.jpg'),
-      status: 'hidden',
-      selected: false,
-      matched: false
-    },
-  {
-      name: 'spider',
-      image: require('./css/images/apples.jpg'),
-      status: 'hidden',
-      selected: false,
-      matched: false
-    },
-  {
       name: 'goat',
-      image: require('./css/images/apples.jpg'),
+      image: require('./css/images/goat.png'),
       status: 'hidden',
       selected: false,
       matched: false
     },
   {
-      name: 'penguine',
-      image: require('./css/images/apples.jpg'),
+      name: 'hippo',
+      image: require('./css/images/hippo.png'),
       status: 'hidden',
       selected: false,
       matched: false
     },
   {
-      name: 'horse',
-      image: require('./css/images/banana.jpg'),
+      name: 'leopard',
+      image: require('./css/images/leopard.png'),
       status: 'hidden',
       selected: false,
       matched: false
     },
   {
-      name: 'fish',
-      image: require('./css/images/banana.jpg'),
+      name: 'monkey',
+      image: require('./css/images/monkey.png'),
       status: 'hidden',
       selected: false,
       matched: false
     },
   {
-      name: 'dog',
-      image: require('./css/images/banana.jpg'),
+      name: 'octopus',
+      image: require('./css/images/octopus.png'),
       status: 'hidden',
       selected: false,
       matched: false
     },
   {
-    name: 'hippo',
-    image: require('./css/images/worm.jpg'),
+      name: 'panda',
+      image: require('./css/images/panda.png'),
+      status: 'hidden',
+      selected: false,
+      matched: false
+    },
+  {
+      name: 'penguin',
+      image: require('./css/images/penguin.png'),
+      status: 'hidden',
+      selected: false,
+      matched: false
+    },
+  {
+      name: 'pig',
+      image: require('./css/images/pig.png'),
+      status: 'hidden',
+      selected: false,
+      matched: false
+    },
+  {
+    name: 'sheep',
+    image: require('./css/images/sheep.png'),
+    status: 'hidden',
+    selected: false,
+    matched: false
+  },
+  {
+    name: 'sheep2',
+    image: require('./css/images/sheep2.png'),
+    status: 'hidden',
+    selected: false,
+    matched: false
+  },
+  {
+    name: 'tiger',
+    image: require('./css/images/tiger.png'),
+    status: 'hidden',
+    selected: false,
+    matched: false
+  },
+  {
+    name: 'zebra',
+    image: require('./css/images/zebra.png'),
+    status: 'hidden',
+    selected: false,
+    matched: false
+  },
+  {
+    name: 'zebra2',
+    image: require('./css/images/zebra2.png'),
     status: 'hidden',
     selected: false,
     matched: false

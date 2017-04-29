@@ -38,7 +38,7 @@ class Players extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="bottom-right">
       <ul>
         {(this.props.players || []).map(player => this.renderPlayer(player))}
       </ul>

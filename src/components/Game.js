@@ -8,7 +8,7 @@ class Game extends React.Component {
       return null
     }
     return(
-      <div>
+      <div className="bottom-left">
         <h3 className="gamenumber">Howdi {gameName} Game!</h3>
         <p>Choose a New Game to Restart</p>
         <button className="start-easy-game-button" name="easy" onClick={(e) => this.props.restartGame(e.target.name)}>New Easy</button>

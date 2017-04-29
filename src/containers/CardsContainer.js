@@ -47,7 +47,7 @@ class CardsContainer extends React.Component {
       return null
     }
     return(
-      <div>
+      <div className="top">
         <div className="game-over" value={this.props.gameOver()}>
             <div>{this.props.gameOver() ? "GAME OVER! " : ""}</div>
         </div>

@@ -97,6 +97,7 @@ class App extends Component {
   }
 
   randomizeCards(num){
+    //doubles each card and randomizes order
     if(this.state.players.length === 0) {
       return;
     }
@@ -164,10 +165,11 @@ class App extends Component {
 
 
   restartGame(e) {
+    //sets number of unique cards to load
     let num;
-    if (e === 'easy') {num = 1}
-    else if (e === 'medium') {num = 3}
-    else {num = 6}
+    if (e === 'easy') {num = 6}
+    else if (e === 'medium') {num = 9}
+    else {num = 12}
     this.randomizeCards(num);
     this.resetPlayers();
   }
@@ -187,14 +189,14 @@ class App extends Component {
             gameOver={this.gameOver}
             gameWinner={this.gameWinner}
             preGame={this.preGame}
-          />
+                    />
           <StartPage
             restartGame={this.restartGame}
             addPlayer={this.addPlayer}
             gameStarted={this.gameStarted}
             preGame={this.preGame}
             />
-            <Game
+          <Game
             gameStarted={this.gameStarted}
             restartGame={this.restartGame}
             gameOver={this.gameOver}
@@ -211,7 +213,7 @@ class App extends Component {
             totalScores={this.totalScores()}
             cards={this.state.cards}
             />
-          <PlayersContainer
+          <PlayersContainer className="bottom-rigth"
             players={this.state.players}
             addPlayer={this.addPlayer}
             gameStarted={this.gameStarted}

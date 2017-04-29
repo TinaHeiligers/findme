@@ -8,8 +8,8 @@ class StartPage extends React.Component {
       return null
     }
     return(
-    <div>
-      <h1 className="top">
+    <div className="position-top">
+      <h1>
         Find Me
       </h1>
       <h2 className="top">Find my matching partner in all the cards!</h2>

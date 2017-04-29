@@ -26,7 +26,7 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.top {
+.position-top {
   /*font-size: 4em;*/
   line-height: 1.0;
   margin-bottom:0.2em;
@@ -38,6 +38,37 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.outer {
+  position: absolute;
+  background-color: yellow;
+  width:100%;
+  height:100%;
+}
+.top {
+  background-color: orange;
+  top: 0;
+  bottom: 200px;
+  left: 0;
+  right: 0;
+  margin:10px 10px 0 10px;/* top | right | bottom | left */
+}
+.bottom-left {
+  background-color: blue;
+  height: 200px;
+  left: 0;
+  width: 200px;
+  bottom: 0;
+  margin:0px 10px 10px 10px;/* top | right | bottom | left */
+}
+.bottom-right {
+  background-color: green;
+  height: 200px;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  margin:0px 10px 10px 0px;/* top | right | bottom | left */
 }
 /*END MAIN APP*/
 
@@ -220,10 +251,6 @@ li.players {
 }
 .memory-cards {
   text-align: center;
-  /*background-color: #666;*/
-  /*background-color: yellow;*/
-  /*padding: 20px;*/
-  /*color: black;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,51 +261,12 @@ li.players {
   margin: 0 auto;
 
 }
-.memory-cards > * {
-  /*-webkit-box-flex: 1;*/
-      /*-ms-flex: 1 4 auto;*/
-          /*flex: 1 4 auto;*/
-  /*padding-left: 0.5em;*/
-  /*padding-right: 0.5em;*/
-  /*border: 5px double black;*/
-  /*background-color: white;*/
-  /*-webkit-transition: all 0.3s;*/
-  /*transition: all 0.3s;*/
-  /*box-shadow: 0px 5px 5px rgba(0,0,0,0.1);*/
-  /*overflow: hidden;*/
-}
-.memory-cards > *:first-child {
-  /*-ms-flex-negative: 1;
-      flex-shrink: 1;
-  -ms-flex-preferred-size: 12vw;
-      flex-basis: 12vw;
-      max-width: 12vw;
-  /*background: purple;*/
-  /*color:white;*/
-  /*border: 5px double black;*/
-}
-.memory-cards > *.second-child {
-  /*-ms-flex-negative: 1;*/
-      /*flex-shrink: 1;*/
-  /*-ms-flex-preferred-size: 76vw;*/
-      /*flex-basis: 76vw;*/
-}
-.memory-cards > *:last-child {
-  /*-ms-flex-negative: 1;*/
-      /*flex-shrink: 1;*/
-  /*-ms-flex-preferred-size: 12vw;*/
-      /*flex-basis: 12vw;*/
-      /*max-width: 12vw;*/
-  /*background: purple;*/
-  /*color:white;*/
-  /*border: 5px double black;*/
-}
+
 /*END memory-cards layout*/
 
 /*START CARD component*/
 .cards-space {
   border: 5px ridge;
-  width: 20%;
   max-width: 20%;
   min-height: 11.5vh;
   max-height: 11.5vh;
