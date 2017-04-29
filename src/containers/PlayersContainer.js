@@ -1,6 +1,5 @@
 import React from 'react';
 import AddPlayerFormContainer from '../containers/AddPlayerFormContainer';
-import Players from '../components/Players'
 //gets as props: players, an array
 class PlayersContainer extends React.Component {
 

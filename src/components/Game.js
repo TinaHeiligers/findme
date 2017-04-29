@@ -1,13 +1,8 @@
 import React from 'react';
-import { gameName, gameNumber } from '../helpers';
-import Players from './Players';
+import { gameName } from '../helpers';
 // import './game.css';
 
 class Game extends React.Component {
-  constructor(){
-    super()
-  }
-
   render() {
     if (!this.props.gameStarted()) {
       return null

@@ -43,7 +43,7 @@ class Players extends React.Component {
         {(this.props.players || []).map(player => this.renderPlayer(player))}
       </ul>
       <div className="winner">{this.currentPlayerPrompt()}</div>
-      <div className="winner font-grow">{this.renderWinner()}</div>
+      <div className="winner">{this.renderWinner()}</div>
       </div>
       )
   }

@@ -28,6 +28,7 @@ class App extends Component {
     this.gameWinner = this.gameWinner.bind(this)
     this.preGame = this.preGame.bind(this)
     this.selectedCardsCheck = this.selectedCardsCheck.bind(this)
+    this.totalScores = this.totalScores.bind(this)
   }
 
   preGame() {
@@ -81,6 +82,10 @@ class App extends Component {
       const totalScores = this.scores().reduce((a, b) => a + b, 0);
       return totalScores === this.totalNumberOfCards();
     }
+  }
+
+  totalScores() {
+    return this.scores().reduce((a, b) => a + b, 0)
   }
 
   gameWinner() {
@@ -203,6 +208,8 @@ class App extends Component {
             currentPlayer={this.currentPlayer()}
             gameWinner={this.gameWinner}
             preGame={this.preGame}
+            totalScores={this.totalScores()}
+            cards={this.state.cards}
             />
           <PlayersContainer
             players={this.state.players}
