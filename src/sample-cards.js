@@ -2,13 +2,6 @@
 //note that I repeat the cards in this array with different keys but the same object for the key.
 const cards = [
   {
-      name: 'bear',
-      image: require('./css/images/bear.png'),
-      status: 'hidden',
-      selected: false,
-      matched: false
-    },
-  {
       name: 'cat',
       image: require('./css/images/cat.png'),
       status: 'hidden',
@@ -25,27 +18,6 @@ const cards = [
   {
       name: 'goat',
       image: require('./css/images/goat.png'),
-      status: 'hidden',
-      selected: false,
-      matched: false
-    },
-  {
-      name: 'hippo',
-      image: require('./css/images/hippo.png'),
-      status: 'hidden',
-      selected: false,
-      matched: false
-    },
-  {
-      name: 'leopard',
-      image: require('./css/images/leopard.png'),
-      status: 'hidden',
-      selected: false,
-      matched: false
-    },
-  {
-      name: 'monkey',
-      image: require('./css/images/monkey.png'),
       status: 'hidden',
       selected: false,
       matched: false
@@ -78,6 +50,13 @@ const cards = [
       selected: false,
       matched: false
     },
+    {
+      name: 'bear',
+      image: require('./css/images/bear.png'),
+      status: 'hidden',
+      selected: false,
+      matched: false
+    },
   {
     name: 'sheep',
     image: require('./css/images/sheep2.png'),
@@ -92,9 +71,30 @@ const cards = [
     selected: false,
     matched: false
   },
+    {
+      name: 'leopard',
+      image: require('./css/images/leopard.png'),
+      status: 'hidden',
+      selected: false,
+      matched: false
+    },
   {
     name: 'zebra',
     image: require('./css/images/zebra.png'),
+    status: 'hidden',
+    selected: false,
+    matched: false
+  },
+  {
+    name: 'monkey',
+    image: require('./css/images/monkey.png'),
+    status: 'hidden',
+    selected: false,
+    matched: false
+  },
+  {
+    name: 'hippo',
+    image: require('./css/images/hippo.png'),
     status: 'hidden',
     selected: false,
     matched: false

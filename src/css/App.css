@@ -83,6 +83,9 @@ body {
   color: white;
   height: 22vh;
 }
+ul.bottom {
+  margin-bottom:0;
+}
 .bottom-left {
   background-color: blue;
   color: white;
@@ -187,7 +190,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 200px;
+  bottom: 30vh;
   right: 0;
 }
 
@@ -253,7 +256,7 @@ li.players {
   list-style: none;
   padding-left: 5px;
   text-align: left;
-  line-height: 1.2em;
+  line-height: 1.0em;
   font-size: 5vw;
 }
 
@@ -300,21 +303,23 @@ span.cards-remaining {
 /*START CARDS-CONTAINER*/
 .card-container {
   position: relative;
-  margin: 1vh 1vw;
   perspective: 800px;
   display: inline-block;
   flex: 1 1 10%;
   }
 .medium .card-container {
   flex: 1 1 14%;
+  margin: 1.1vh 1.1vw;
   height: 30%;
 }
 .easy .card-container {
+  margin: 1vh 2.4vw;
   flex: 1 1 20%;
 }
 
 .hard .card-container {
   flex: 1 1 10%;
+  margin: 1.1vh 1.1vw;
 }
   .card {
     width: 100%;
@@ -423,6 +428,7 @@ h3.gamenumber  {
 p.game-restart  {
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 0;
   font-size: 0.9em;
 }
 .number{

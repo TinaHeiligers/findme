@@ -25,7 +25,7 @@ class GameOver extends React.Component{
       const otherNames = gameWinnerNames.join(', ');
       return `Congratulations ${otherNames} and ${lastPerson}!!!`;
     } else {
-      return `Congratulations ${this.props.gameWinner()[0]}!!!`;
+      return `${this.props.gameWinner()[0]} you won!!!`;
     }
   }
   restart() {

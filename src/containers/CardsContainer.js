@@ -13,7 +13,6 @@ class CardsContainer extends React.Component {
     e.preventDefault();
     console.log(card.image);
     if(card.matched) {
-      e.currentTarget.style.backgroundColor = 'red';
       console.log("already matched");
       return;
     }
