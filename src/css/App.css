@@ -480,7 +480,7 @@ p.game-restart  {
   text-align: center;
   margin-top: 0.1vh;
   margin-bottom: 0;
-  font-size: 0.9vw;
+  font-size: 1.1vw;
 }
 .number{
   margin-top: 60px;
@@ -510,7 +510,7 @@ button.start-game-button {
   height: 50px;
   width: 50px;
   border-radius: 50px;
-  padding: 0.1em 0.5em;
+  padding: 0.1em 0.1em;
   margin-right: 5px;
   font-size: 2vh;
   background: green; /* For browsers that do not support gradients */
@@ -526,7 +526,7 @@ button.start-game-button {
   margin-right: 5px;
   height: 50px;
   width: 50px;
-  padding: 0.1em 0.5em;
+  padding: 0.1em 0.1em;
   font-size: 1.5vh;
   background: orange; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#ff8c00, #cd6600); /* Safari 5.1 to 6.0 */
@@ -541,7 +541,7 @@ button.start-game-button {
   margin-top: 5px;
   height: 50px;
   width: 50px;
-  padding: 0.1em 0.5em;
+  padding: 0.1em 0.1em;
   font-size: 2vh;
   background: red; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#ff0000, #8b0000); /* Safari 5.1 to 6.0 */
