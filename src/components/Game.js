@@ -11,10 +11,10 @@ class Game extends React.Component {
       <div className="bottom bottom-left">
         <h3 className="gamenumber">{gameName}!</h3>
         <p className="game-restart">Choose a New Game to Restart</p>
-        <div className="start-buttons hidden">
-          <button className="start-easy-game-button" name="easy" onClick={(e) => this.props.restartGame(e.target.name)}>New Easy</button>
-          <button className="start-medium-game-button" name="medium" onClick={(e) => this.props.restartGame(e.target.name)}>New Medium</button>
-          <button className="start-hard-game-button" name="hard" onClick={(e) => this.props.restartGame(e.target.name)}>New Hard</button>
+        <div className="buttons-restart">
+          <button className="button-restart-easy" name="easy" onClick={(e) => this.props.restartGame(e.target.name)}>easy</button>
+          <button className="button-restart-medium" name="medium" onClick={(e) => this.props.restartGame(e.target.name)}>medium</button>
+          <button className="button-restart-hard" name="hard" onClick={(e) => this.props.restartGame(e.target.name)}>hard</button>
         </div>
       </div>
       )

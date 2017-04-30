@@ -195,11 +195,6 @@ body {
 }
 
 .start-buttons {
-    /* float: right; */
-    /* position: absolute; */
-    /* padding-right: 10px; */
-    /* bottom: 75px; */
-    /* right: 100px; */
     text-align: center;
 }
 button.start-easy-game-button {
@@ -227,7 +222,7 @@ button.start-medium-game-button {
   margin-right: 5px;
   height: 100px;
   width: 100px;
-  padding: 0.1em 0.5em;
+  padding: 0.1em 0.2em;
   font-size: 1.5em;
   background: orange; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#ff8c00, #cd6600); /* Safari 5.1 to 6.0 */
@@ -437,6 +432,56 @@ button.start-game-button {
   background: -o-radial-gradient(#00e600, #006400); /* For Opera 11.6 to 12.0 */
   background: -moz-radial-gradient(#00e600, #006400); /* For Firefox 3.6 to 15 */
   background: radial-gradient(#00e600, #006400); /* Standard syntax (must be last) */
+}
+.buttons-restart {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+.button-restart-easy {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  padding: 0.1em 0.5em;
+  margin-right: 5px;
+  font-size: 2vh;
+  background: green; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(#00e600, #006800); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#00e600, #006800); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#00e600, #006800); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#00e600, #006800); /* Standard syntax (must be last) */
+}
+.button-restart-medium {
+  text-align: center;
+  color: black;
+  border-radius: 50px;
+  margin-right: 5px;
+  height: 50px;
+  width: 50px;
+  padding: 0.1em 0.5em;
+  font-size: 1.5vh;
+  background: orange; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(#ff8c00, #cd6600); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#ff8c00, #cd6600); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#ff8c00, #cd6600); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#ff8c00, #cd6600); /* Standard syntax (must be last) */
+}
+.button-restart-hard {
+  text-align: center;
+  color: black;
+  border-radius: 50px;
+  margin-top: 5px;
+  height: 50px;
+  width: 50px;
+  padding: 0.1em 0.5em;
+  font-size: 2vh;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(#ff0000, #8b0000); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(#ff0000, #8b0000); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(#ff0000, #8b0000); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(#ff0000, #8b0000); /* Standard syntax (must be last) */
+
 }
 /*END GAME component*/
 
