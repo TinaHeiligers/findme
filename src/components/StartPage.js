@@ -58,9 +58,9 @@ class StartPage extends React.Component {
       </div>
       <div className="player-welcome">{this.props.players.map((player) => this.playerWelcome(player))}</div>
       <div className="start-buttons">
-        <button className="start-easy-game-button" name="easy" onClick={(e) => this.props.restartGame(e.target.name)}>easy</button>
-        <button className="start-medium-game-button" name="medium" onClick={(e) => this.props.restartGame(e.target.name)}>medium</button>
-        <button className="start-hard-game-button" name="hard" onClick={(e) => this.props.restartGame(e.target.name)}>hard</button>
+        <button className="start-easy-game-button wrapper" name="easy" onClick={(e) => this.props.restartGame(e.target.name)}>easy<span className="tooltip1">12 cards</span></button>
+        <button className="start-medium-game-button wrapper" name="medium" onClick={(e) => this.props.restartGame(e.target.name)}>medium<span className="tooltip2">18 cards</span></button>
+        <button className="start-hard-game-button wrapper" name="hard" onClick={(e) => this.props.restartGame(e.target.name)}>hard<span className="tooltip3">24 cards</span></button>
       </div>
     </div>
     )
