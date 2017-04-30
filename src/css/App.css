@@ -72,26 +72,52 @@ body {
     justify-content: space-between;
     flex-flow: wrap;
 }
-.bottom-left {
+.bottom {
+  border-color: white;
+  border-style: solid;
+  background-color: white;
+  box-shadow: 0 0 3px black;
+  border-radius: 10px;
   position: absolute;
-    background-color: blue;
-    height: 200px;
-    left: 0;
-    width: 200px;
-    bottom: 0;
-    margin: 4px 10px 10px 10px;
-    padding: 1vh;
+  opacity: 0.7;
+  font-size: 3vh;
+  color: white;
+  height: 195px;
+}
+.bottom-left {
+  /*border-color: white;
+  border-style: solid;
+  background-color: white;
+  box-shadow: 0 0 3px black;
+  border-radius: 10px;
+  position: absolute;
+  opacity: 0.7;
+  height: 195px;
+  font-size: 3vh;*/
+  background-color: blue;
+  color: white;
+  left: 0;
+  width: 200px;
+  bottom: 0;
+  margin: 4px 10px 10px 10px;
+  padding: 1vh;
 }
 .bottom-right {
-      position: absolute;
-    background-color: green;
-    /* left: 191px; */
-    left: 240px;
-    right: 0;
-    bottom: 0;
-    height: 200px;
-    margin: 0px 10px 10px 0px;
-    padding: 1vh;
+/*  border-color: white;
+  border-style: solid;
+  background-color: white;
+  box-shadow: 0 0 3px black;
+  border-radius: 10px;
+  position: absolute;
+  opacity: 0.7;*/
+  /*height: 195px;*/
+  /*color: white;*/
+  background-color: green;
+  left: 240px;
+  right: 0;
+  bottom: 0;
+  margin: 0px 10px 10px 0px;
+  padding: 1vh;
 }
 /*END MAIN APP*/
 
@@ -227,12 +253,12 @@ button.start-hard-game-button {
   background: radial-gradient(#ff0000, #8b0000); /* Standard syntax (must be last) */
 }
 
-
 li.players {
   list-style: none;
   padding-left: 5px;
   text-align: left;
   line-height: 1.5em;
+  font-size: 8vh;
 }
 /*END StartPage*/
 
@@ -376,6 +402,12 @@ li.players {
   padding: 20px;
 }
 h3.gamenumber  {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+p.game-restart  {
+  text-align: center;
   margin-top: 20px;
   font-size: 0.9em;
 }

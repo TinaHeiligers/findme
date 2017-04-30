@@ -11,6 +11,8 @@ class Players extends React.Component {
       <li key={player.name} className="players">
         <span>{player.name}</span>
         <span> {this.message(player)}</span>
+        <span>{this.props.totalScores || ""}</span>
+        <span>{this.props.cards.length || ""}</span>
       </li>
     )
   }
@@ -33,7 +35,7 @@ class Players extends React.Component {
       return null;
     }
     return(
-      <div className="bottom-right">
+      <div className="bottom bottom-right">
         <ul>
           {(this.props.players || []).map(player => this.renderPlayer(player))}
         </ul>
