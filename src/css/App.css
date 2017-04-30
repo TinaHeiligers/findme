@@ -500,6 +500,28 @@ button.start-game-button {
 }
 /*END GAME component*/
 
+/*START GAMEOVER component*/
+.gameover {
+    position: absolute;
+    font-family: 'Baloo', sans-serif;
+    color: lawngreen;
+    text-shadow:
+      0.5vw 0.5vw 0 black,
+     -0.1vw -0.1vw 0 black,
+      0.1vw -0.1vw 0 black,
+     -0.1vw  0.1vw 0 black,
+      0.1vw  0.1vw 0 black,
+      0vw  0vw 1vw black;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    font-size: 10vw;
+    opacity: 0;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+/*END GAMEOVER component*/
+
 /*ANIMATIONS*/
 .animated {
     animation-duration: 1s;

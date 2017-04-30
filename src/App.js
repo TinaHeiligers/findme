@@ -7,7 +7,7 @@ import StartPage from './components/StartPage';
 import Game from './components/Game';
 import Players from './components/Players';
 import PlayerTurn from './components/PlayerTurn'
-
+import GameOver from './components/GameOver'
 import CardsContainer from './containers/CardsContainer';
 
 class App extends Component {
@@ -233,6 +233,10 @@ class App extends Component {
             showNewPlayerState={this.state.showNewPlayerState}
             gameStarted={this.gameStarted}
             currentPlayer={this.currentPlayer()}
+            gameOver={this.gameOver}
+            />
+            <GameOver
+            gameWinner={this.gameWinner}
             gameOver={this.gameOver}
             />
       </div>
