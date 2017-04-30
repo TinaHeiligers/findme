@@ -182,7 +182,10 @@ class App extends Component {
   restartGame(e) {
     //sets number of unique cards to load
     let num;
-    if (e === 'easy') {num = 6}
+    if (!e) {
+      num = this.state.cards.length/2
+    }
+    else if (e === 'easy') {num = 6}
     else if (e === 'medium') {num = 9}
     else {num = 12}
     this.randomizeCards(num);
@@ -238,6 +241,7 @@ class App extends Component {
             <GameOver
             gameWinner={this.gameWinner}
             gameOver={this.gameOver}
+            restartGame={this.restartGame}
             />
       </div>
     );

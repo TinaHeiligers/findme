@@ -28,9 +28,12 @@ class GameOver extends React.Component{
       return `Congratulations ${this.props.gameWinner()[0]}!!!`;
     }
   }
+  restart() {
+    this.props.restartGame()
+  }
   render() {
     return(
-      <div className={this.coverClassName()}>
+      <div className={this.coverClassName()} onClick={this.restart.bind(this)}>
         <div className={this.playerClassName()}>{this.renderWinner()}</div>
       </div>
     )
