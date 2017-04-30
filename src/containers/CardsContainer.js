@@ -29,8 +29,19 @@ class CardsContainer extends React.Component {
     }
     return array.join(" ");
   }
-  cardContainerClassName(cards) {
-    return ""
+  mainCardsContainerClassName() {
+    let styleArr = ["top"]
+    switch (this.props.cards.length){
+      case 12:
+        styleArr.push("easy")
+        break;
+      case 18:
+        styleArr.push("medium")
+        break;
+      default:
+        styleArr.push("hard")
+        }
+      return styleArr.join(" ")
   }
 
   renderCards(card, idx) {
@@ -53,7 +64,7 @@ class CardsContainer extends React.Component {
       return null
     }
     return(
-      <div className="top">
+      <div className={this.mainCardsContainerClassName()}>
         <div className="game-over hidden" value={this.props.gameOver()}>
             <div>{this.props.gameOver() ? "GAME OVER! " : ""}</div>
         </div>
