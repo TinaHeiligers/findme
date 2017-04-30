@@ -1,12 +1,15 @@
 import React from 'react';
 
 class PlayerTurn extends React.Component {
-  playerClassName() {
-    if (this.props.showNewPlayer) {
-      return "turn animate zoomInUp"
+  coverClassName() {
+    if (this.props.showNewPlayerState === 'hidden') {
+      return "cover hidden"
     } else {
-      return "turn animate hidden"
+      return "cover"
     }
+  }
+  playerClassName() {
+    return `turn animated ${this.props.showNewPlayerState}`
   }
   currentPlayerPrompt() {
     if (!this.props.gameStarted()) {
@@ -19,7 +22,9 @@ class PlayerTurn extends React.Component {
   }
   render() {
     return(
-      <div className={this.playerClassName()}>{this.currentPlayerPrompt()}</div>
+      <div className={this.coverClassName()}>
+        <div className={this.playerClassName()}>{this.currentPlayerPrompt()}</div>
+      </div>
     )
   }
 }

@@ -29,6 +29,9 @@ class CardsContainer extends React.Component {
     }
     return array.join(" ");
   }
+  cardContainerClassName(cards) {
+    return ""
+  }
 
   renderCards(card, idx) {
 
@@ -62,9 +65,3 @@ class CardsContainer extends React.Component {
 }
 
 export default CardsContainer;
-        // <li className="cards-space" key={idx} name="selected" value={card.selected} onClick={(e)=> this.handleClick(e, card)} style={style}>
-        //           <span
-        //             name="selected"
-        //             value={card.selected}>{card.selected || card.matched ? card.name : "Click me"}
-        //           </span>
-        //         </li>

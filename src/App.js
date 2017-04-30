@@ -18,7 +18,7 @@ class App extends Component {
       selectedCards: [],
       players: [],
       currentPlayerIndex: 0,
-      showNewPlayer: false,
+      showNewPlayerState: 'hidden'
     };
 
     this.addPlayer = this.addPlayer.bind(this)
@@ -151,21 +151,28 @@ class App extends Component {
   }
 
   switchTurns() {
-    if(this.gameOver()) {
-      console.log("GAME OVER!")
+    if(this.gameOver() || this.state.players.length < 2) {
+      this.setState({
+        currentPlayerIndex: (this.state.currentPlayerIndex + 1) % this.state.players.length,
+        showNewPlayerState: 'hidden'
+      });
     } else {
+      this.setState({
+        currentPlayerIndex: (this.state.currentPlayerIndex + 1) % this.state.players.length,
+        showNewPlayerState: 'zoomInUp'
+      });
+      setTimeout(() => {
         this.setState({
-          currentPlayerIndex: (this.state.currentPlayerIndex + 1) % this.state.players.length,
-          showNewPlayer: true
-        });
+          showNewPlayerState: 'explodeOut'
+        })
         setTimeout(() => {
           this.setState({
-            showNewPlayer: false
+            showNewPlayerState: 'hidden'
           })
-        }, 3000)
-      }
+        }, 1000)
+      }, 1500)
     }
-
+  }
   updateScore(matchedCards) {
     const currentPlayer = this.currentPlayer();
     currentPlayer.matchedCards.push(...matchedCards);
@@ -223,7 +230,7 @@ class App extends Component {
             cards={this.state.cards}
             />
             <PlayerTurn
-            showNewPlayer={this.state.showNewPlayer}
+            showNewPlayerState={this.state.showNewPlayerState}
             gameStarted={this.gameStarted}
             currentPlayer={this.currentPlayer()}
             gameOver={this.gameOver}

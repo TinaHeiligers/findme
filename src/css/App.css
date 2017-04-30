@@ -190,6 +190,14 @@ body {
   text-align: center;
   font-size: 4vh;
 }
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .hidden {
     display: none;
 }
@@ -305,6 +313,14 @@ span.cards-remaining {
     display: inline-block;
     flex: 1 1 10%;
   }
+.easy .card-container {
+  width: 20%;
+  height: 25%;
+}
+.medium .card-container {
+  width: 15%;
+  height: 25%;
+}
   .card {
     width: 100%;
     height: 100%;
