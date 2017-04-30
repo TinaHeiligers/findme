@@ -560,10 +560,10 @@ button.start-game-button {
 /*START TOOLTIPS*/
 .wrapper .tooltip1 {
 background: black;
-    bottom: 30vh;
+    bottom: 20vh;
     color: white;
     /* display: block; */
-    left: 30vh;
+    left: 55vh;
     margin-bottom: 0;
     opacity: 0;
     padding: 1vh;
@@ -580,10 +580,10 @@ background: black;
 }
 .wrapper .tooltip2 {
 background: black;
-    bottom: 5vh;
+    bottom: 0vh;
     color: white;
     /* display: block; */
-    left: 45vh;
+    left: 75vh;
     margin-bottom: 0;
     opacity: 0;
     padding: 1vh;
@@ -600,10 +600,10 @@ background: black;
 }
 .wrapper .tooltip3 {
 background: black;
-    bottom: 28vh;
+    bottom: 0vh;
     color: white;
     /* display: block; */
-    left: 70vh;
+    left: 95vh;
     margin-bottom: 0;
     opacity: 0;
     padding: 1vh;
