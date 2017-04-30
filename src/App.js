@@ -6,6 +6,7 @@ import sampleCards from './sample-cards';
 import StartPage from './components/StartPage';
 import Game from './components/Game';
 import Players from './components/Players';
+import PlayerTurn from './components/PlayerTurn'
 
 import PlayersContainer from './containers/PlayersContainer';
 import CardsContainer from './containers/CardsContainer';
@@ -17,7 +18,8 @@ class App extends Component {
       cards: [],
       selectedCards: [],
       players: [],
-      currentPlayerIndex: 0
+      currentPlayerIndex: 0,
+      showNewPlayer: false,
     };
 
     this.addPlayer = this.addPlayer.bind(this)
@@ -29,6 +31,7 @@ class App extends Component {
     this.preGame = this.preGame.bind(this)
     this.selectedCardsCheck = this.selectedCardsCheck.bind(this)
     this.totalScores = this.totalScores.bind(this)
+
   }
 
   preGame() {
@@ -153,8 +156,14 @@ class App extends Component {
       console.log("GAME OVER!")
     } else {
         this.setState({
-          currentPlayerIndex: (this.state.currentPlayerIndex + 1) % Object.keys(this.state.players).length
+          currentPlayerIndex: (this.state.currentPlayerIndex + 1) % this.state.players.length,
+          showNewPlayer: true
         });
+        setTimeout(() => {
+          this.setState({
+            showNewPlayer: false
+          })
+        }, 3000)
       }
     }
 
@@ -206,12 +215,20 @@ class App extends Component {
             players={this.state.players}
             addPlayer={this.addPlayer}
             gameStarted={this.gameStarted}
-            gameOver={this.gameOver}
             currentPlayer={this.currentPlayer()}
+            currentPlayer={this.currentPlayer()}
+            showNewPlayer={this.state.showNewPlayer}
             gameWinner={this.gameWinner}
+            gameOver={this.gameOver}
             preGame={this.preGame}
             totalScores={this.totalScores()}
             cards={this.state.cards}
+            />
+            <PlayerTurn
+            showNewPlayer={this.state.showNewPlayer}
+            gameStarted={this.gameStarted}
+            currentPlayer={this.currentPlayer()}
+            gameOver={this.gameOver}
             />
       </div>
     );

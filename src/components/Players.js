@@ -14,15 +14,7 @@ class Players extends React.Component {
       </li>
     )
   }
-  currentPlayerPrompt() {
-    if (!this.props.gameStarted()) {
-      return null
-    } else if(!this.props.gameOver()) {
-        return (`${this.props.currentPlayer.name}, it's your turn.`)
-    } else {
-      return null;
-    }
-  }
+
   renderWinner() {
     if (!this.props.gameOver()) {
       return null;
@@ -45,7 +37,6 @@ class Players extends React.Component {
         <ul>
           {(this.props.players || []).map(player => this.renderPlayer(player))}
         </ul>
-        <div className="winner hidden">{this.currentPlayerPrompt()}</div>
         <div className="winner">{this.renderWinner()}</div>
       </div>
       )
