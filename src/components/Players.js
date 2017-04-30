@@ -11,8 +11,6 @@ class Players extends React.Component {
       <li key={player.name} className="players">
         <span>{player.name}</span>
         <span> {this.message(player)}</span>
-        <span>{this.props.totalScores || ""}</span>
-        <span>{this.props.cards.length || ""}</span>
       </li>
     )
   }
@@ -40,6 +38,9 @@ class Players extends React.Component {
           {(this.props.players || []).map(player => this.renderPlayer(player))}
         </ul>
         <div className="winner">{this.renderWinner()}</div>
+        <div>
+        <span className="cards-remaining">{(this.props.cards.length - this.props.totalScores)}</span>
+        </div>
       </div>
       )
   }

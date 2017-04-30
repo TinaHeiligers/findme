@@ -1,5 +1,4 @@
 import React from 'react';
-import AddPlayerFormContainer from '../containers/AddPlayerFormContainer'
 
 
 // eslint-disable-next-line

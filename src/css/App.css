@@ -260,6 +260,14 @@ li.players {
   line-height: 1.5em;
   font-size: 8vh;
 }
+
+span.cards-remaining {
+  position: absolute;
+  right: 30px;
+  bottom: 50px;
+  font-size: 10vh;
+}
+
 /*END StartPage*/
 
 .winner {

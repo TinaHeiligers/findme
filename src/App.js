@@ -8,7 +8,6 @@ import Game from './components/Game';
 import Players from './components/Players';
 import PlayerTurn from './components/PlayerTurn'
 
-import PlayersContainer from './containers/PlayersContainer';
 import CardsContainer from './containers/CardsContainer';
 
 class App extends Component {
@@ -215,7 +214,6 @@ class App extends Component {
             players={this.state.players}
             addPlayer={this.addPlayer}
             gameStarted={this.gameStarted}
-            currentPlayer={this.currentPlayer()}
             currentPlayer={this.currentPlayer()}
             showNewPlayer={this.state.showNewPlayer}
             gameWinner={this.gameWinner}
