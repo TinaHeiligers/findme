@@ -80,13 +80,6 @@ const cards = [
     },
   {
     name: 'sheep',
-    image: require('./css/images/sheep.png'),
-    status: 'hidden',
-    selected: false,
-    matched: false
-  },
-  {
-    name: 'sheep2',
     image: require('./css/images/sheep2.png'),
     status: 'hidden',
     selected: false,
@@ -105,14 +98,7 @@ const cards = [
     status: 'hidden',
     selected: false,
     matched: false
-  },
-  {
-    name: 'zebra2',
-    image: require('./css/images/zebra2.png'),
-    status: 'hidden',
-    selected: false,
-    matched: false
-  },
+  }
 ];
 
 export default cards;
