@@ -428,7 +428,7 @@ span.cards-remaining {
     border-color: gold;
   }
   .card.matched {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateX(-10%);
   }
 
 /*END memory-cards layout*/
