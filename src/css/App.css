@@ -530,7 +530,7 @@ button.start-game-button {
   height: 50px;
   width: 50px;
   padding: 0.1em 0.1em;
-  font-size: 1.5vh;
+  font-size: 0.6vw;
   background: orange; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#ff8c00, #cd6600); /* Safari 5.1 to 6.0 */
   background: -o-radial-gradient(#ff8c00, #cd6600); /* For Opera 11.6 to 12.0 */
