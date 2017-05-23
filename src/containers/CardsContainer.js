@@ -8,17 +8,16 @@ class CardsContainer extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-//this handleClick event is in render cards
+//handles click event in render cards
   handleClick(e, card) {
     e.preventDefault();
-    console.log(card.image);
     if(card.matched) {
-      console.log("already matched");
       return;
     }
     this.props.selectCard(card);
     this.props.selectedCardsCheck();
   }
+  //adding CSS class names to cards to adjust for the number of cards
   cardClassName(card) {
     let array = ["card"];
     if (card.selected) {
@@ -28,6 +27,7 @@ class CardsContainer extends React.Component {
     }
     return array.join(" ");
   }
+  // adding CSS class names to the main cards container to adjust for the number of cards
   mainCardsContainerClassName() {
     let styleArr = ["top"]
     switch (this.props.cards.length){
@@ -42,7 +42,7 @@ class CardsContainer extends React.Component {
         }
       return styleArr.join(" ")
   }
-
+// rendering cards
   renderCards(card, idx) {
 
     return(
@@ -57,7 +57,7 @@ class CardsContainer extends React.Component {
       </div>
       )
   }
-
+// rendering the cards container
   render() {
     if (!this.props.gameStarted()) {
       return null
