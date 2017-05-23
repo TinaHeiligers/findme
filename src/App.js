@@ -9,6 +9,7 @@ import Players from './components/Players';
 import PlayerTurn from './components/PlayerTurn'
 import GameOver from './components/GameOver'
 import CardsContainer from './containers/CardsContainer';
+import base from './base';
 
 class App extends Component {
   constructor() {
@@ -31,6 +32,17 @@ class App extends Component {
     this.selectedCardsCheck = this.selectedCardsCheck.bind(this)
     this.totalScores = this.totalScores.bind(this)
 
+  }
+  componentWillMount() {
+    this.ref = base.syncState(`cards`, {
+      context: this,
+      state: 'cards'
+    });
+  }
+
+  componentWillUnmount() {
+    //removing ref on change of game
+    base.removeBinding(this.ref);
   }
 
   preGame() {
