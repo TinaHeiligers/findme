@@ -33,10 +33,11 @@ class App extends Component {
     this.totalScores = this.totalScores.bind(this)
 
   }
-  componentWillMount() {
-    this.ref = base.syncState(`cards`, {
+  componentDidMount() {
+    this.ref = base.syncState(`findMe`, {
       context: this,
-      state: 'cards'
+      state: 'cards',
+      asArray: true
     });
   }
 
@@ -115,7 +116,10 @@ class App extends Component {
     if(this.state.players.length === 0) {
       return;
     }
-    const newCards = sampleCards.slice(0, num).concat(sampleCards.slice(0, num)).map(card => Object.assign({}, card));//making dups
+    // here I need to fetch card details and url link pic from firebase
+    const newCards = sampleCards.slice(0, num)
+                    .concat(sampleCards.slice(0, num))
+                    .map(card => Object.assign({}, card));//making dups
     const shuffledCards = shuffle(newCards);
     //Resetting selected prop to false on repressing the button
     shuffledCards.forEach(card => {
