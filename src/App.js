@@ -33,8 +33,10 @@ class App extends Component {
     this.totalScores = this.totalScores.bind(this)
 
   }
+  // Connecting to firebase: both cards and players must be added as end points
+  // Not sure if these should be hooked up in componentWillMount or componentDidMount.
   componentDidMount() {
-    this.ref = base.syncState(`findMe`, {
+    this.ref = base.syncState(`findMe/cards`, {
       context: this,
       state: 'cards',
       asArray: true
@@ -51,6 +53,7 @@ class App extends Component {
   }
 
   addPlayer(player) {
+    // I also need to add players to my db.
     const players = this.state.players;
     if (players.length < 2) {
         players.unshift(player)

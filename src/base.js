@@ -1,5 +1,4 @@
-//useing all of firebase
-var Rebase = require('re-base');
+// Using firebase as a db
 var firebase = require('firebase/app');
 var database = require('firebase/database');
 
@@ -11,6 +10,5 @@ var app = firebase.initializeApp({
   storageBucket: "findme-138dc.appspot.com"
 });
 var db = database(app);
-var base = Rebase.createClass(db);
 
 export default base;
