@@ -14,19 +14,19 @@
     "jest-enzyme": "^3.0.1",
     "node-sass": "^4.5.2",
     "react-addons-test-utils": "^15.5.1",
-    "react-scripts": "0.9.5"
+    "react-scripts": "^1.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test:watch":"npm run test -- --watch",
+    "test:watch": "npm run test -- --watch",
     "eject": "react-scripts eject"
   },
   "jest": {
-  "unmockedModulePathPatterns": [
-    "node_modules/react/",
-    "node_modules/enzyme/"
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/"
     ]
   }
 }
