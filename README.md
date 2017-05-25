@@ -1,6 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
 This project is the result of my stackathon at Grace Hopper Academy, 2017.
+See me live here [findMe](https://cryptic-bastion-69594.herokuapp.com) deployed on heroku at https://cryptic-bastion-69594.herokuapp.com
 
 To run this app locally, on the terminaly go:
 
