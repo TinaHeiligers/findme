@@ -143,7 +143,8 @@ class App extends Component {
         selectedCards[0].matched = selectedCards[1].matched = true;
         this.updateScore(selectedCards);
       } else {
-        console.log("Try again!");
+        // console.log("Try again!");
+        return;
       }
       //switch turns
       this.switchTurns();

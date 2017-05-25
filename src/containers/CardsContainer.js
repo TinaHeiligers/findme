@@ -11,9 +11,9 @@ class CardsContainer extends React.Component {
 //this handleClick event is in render cards
   handleClick(e, card) {
     e.preventDefault();
-    console.log(card.image);
+    // console.log(card.image);
     if(card.matched) {
-      console.log("already matched");
+      // console.log("already matched");
       return;
     }
     this.props.selectCard(card);
