@@ -15,10 +15,12 @@ const mapDispatchToProps = (dispatch) => {
     onStartGame: (difficulty) => {
       dispatch(restartGame(difficulty))
     },
-
-    addPlayer: dispatch(addPlayer)
+    onAddPlayer: (name) => {
+      dispatch(addPlayer(name))
+    }
   }
 }
+
 const welcome = () => {
   <StartPage />
 }
