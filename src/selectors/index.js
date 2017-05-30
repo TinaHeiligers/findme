@@ -1,29 +1,29 @@
 
-export const preGame = () => !this.gameStarted() && ! this.gameOver()
+export const preGame = (state) => !gameStarted(state) && ! gameOver(state)
 
-export const currentPlayer = () => this.state.players[this.state.currentPlayerIndex]
+export const currentPlayer = (state) => state.players[state.currentPlayerIndex]
 
-export const totalNumberOfCards = () => this.state.cards.length
+export const totalNumberOfCards = (state) => state.cards.length
 
-export const scores = () => this.state.players.map(player => player.matchedCards.length)
+export const scores = (state) => state.players.map(player => player.matchedCards.length)
 
-export const gameStarted = () => this.state.cards.length > 0
+export const gameStarted = (state) => state.cards.length > 0
 
-export const gameOver = () => {
-  if(!this.gameStarted()) {
+export const gameOver = (state) => {
+  if(!gameStarted(state)) {
     return false;
   } else {
-    const totalScores = this.scores().reduce((a, b) => a + b, 0);
-    return totalScores === this.totalNumberOfCards();
+    const totalScores = scores(state).reduce((a, b) => a + b, 0);
+    return totalScores === totalNumberOfCards(state);
   }
 }
 
-export const totalScores = () => this.scores().reduce((a, b) => a + b, 0)
+export const totalScores = (state) => scores(state).reduce((a, b) => a + b, 0)
 
-export const gameWinner = () => {
-  const maxScore = Math.max(...this.scores());
-  //retrieve the player(s) names who have this score
-  return this.state.players
+export const gameWinner = (state) => {
+  const maxScore = Math.max(...scores(state));
+  //retrieve the player(s) names who have score
+  return state.players
       .filter(player => player.matchedCards.length === maxScore)
       .map(player => player.name)
 }

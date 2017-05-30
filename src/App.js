@@ -7,15 +7,21 @@ import { connect } from 'react-redux'
 //selectors
 import { preGame } from './selectors'
 
-import Game from './components/Game';
-import Players from './components/Players';
+//containers
+import WelcomeContainer from './containers/welcomeContainer'
+import GameContainer from './containers/GameContainer'
+
+import Game from './components/Game'
+import Players from './components/Players'
 import PlayerTurn from './components/PlayerTurn'
 import GameOver from './components/GameOver'
-import CardsContainer from './containers/CardsContainer';
+import CardsContainer from './containers/CardsContainer'
 
 const mapStateToProps = (state) => {
   return {
     // we only care about whether the game has started or not
+    started: preGame(state)
+    }
 }
 
 class App extends Component {
@@ -60,8 +66,15 @@ class App extends Component {
       }, 1500)
     }
   }
-
   render() {
+    return(
+      <div>
+      {this.state.started ? <GameContainer /> : <WelcomeContainer />}
+      </div>
+    )
+  }
+
+  oldRender() {
     return(
       <div>
         <StartPage
@@ -109,6 +122,7 @@ class App extends Component {
       </div>
     );
   }
+
 }
 
 export default connect(

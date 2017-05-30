@@ -21,11 +21,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const welcome = () => {
-  <StartPage />
-}
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(welcome)
+)(StartPage)
