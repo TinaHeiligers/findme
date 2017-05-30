@@ -1,6 +1,7 @@
 // actions
 const SELECT_CARD = 'SELECT_CARD'
 const ALL_CARDS = 'ALL_CARDS'
+
 // action creators
 export const selectCard = card => ({
   type: SELECT_CARD, card
