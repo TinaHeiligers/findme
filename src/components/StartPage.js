@@ -1,5 +1,6 @@
-import React from 'react';
+// Not aware of redux
 
+import React from 'react';
 
 // eslint-disable-next-line
 class StartPage extends React.Component {

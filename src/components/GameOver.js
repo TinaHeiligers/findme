@@ -1,3 +1,4 @@
+// Not aware of redux
 import React from 'react';
 
 class GameOver extends React.Component{

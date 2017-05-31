@@ -1,3 +1,5 @@
+// Not aware of redux
+
 import React from 'react';
 
 class Players extends React.Component {

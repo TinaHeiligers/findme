@@ -1,3 +1,5 @@
+//aware of redux
+//Dispatch Actions
 import React from 'react';
 // import Card from './Card';
 

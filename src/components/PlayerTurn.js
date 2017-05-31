@@ -1,3 +1,5 @@
+// Not aware of redux
+
 import React from 'react';
 
 class PlayerTurn extends React.Component {

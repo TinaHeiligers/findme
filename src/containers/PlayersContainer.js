@@ -1,3 +1,5 @@
+//aware of redux
+//Dispatch Actions
 import React from 'react';
 
 //gets as props: players, an array

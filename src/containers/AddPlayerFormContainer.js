@@ -1,3 +1,5 @@
+//aware of redux
+//Dispatch Actions
 import React from 'react';
 
 class AddPlayerFormContainer extends React.Component {

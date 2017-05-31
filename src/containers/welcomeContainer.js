@@ -1,3 +1,5 @@
+//aware of redux
+//Dispatch Actions
 import React from 'react'
 import { connect } from 'react-redux'
 import StartPage from './components/StartPage';

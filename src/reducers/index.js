@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+// import all reducers from seperate files
 
 //reducer
   addPlayer(player) {
@@ -83,8 +84,7 @@ import { combineReducers } from 'redux'
   }
 
 
-const rootReducer = combineReducers({
+export default combineReducers({
   cards: require('./cards').default,
   players: require('./players').default
 })
-export default rootReducer
