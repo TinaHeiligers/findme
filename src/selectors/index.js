@@ -1,5 +1,5 @@
 
-export const preGame = (state) => !gameStarted(state) && ! gameOver(state)
+export const preGame = (state) => !gameStarted(state) && !gameOver(state)
 
 export const currentPlayer = (state) => state.players[state.currentPlayerIndex]
 
