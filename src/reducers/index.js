@@ -1,16 +1,10 @@
 import { combineReducers } from 'redux'
 // import all reducers from seperate files
+import cardsReducer from './cards'
+import playersReducer from './players'
+import gameReducer from './game'
 
-//reducer
-  addPlayer(player) {
-    const players = this.state.players;
-    if (players.length < 2) {
-        players.unshift(player)
-        this.setState({ players })
-      } else {
-      return "Only up to two may play!"
-      }
-    }
+
 
 
 
@@ -85,6 +79,7 @@ import { combineReducers } from 'redux'
 
 
 export default combineReducers({
-  cards: require('./cards').default,
-  players: require('./players').default
+  cards: cardsReducer,
+  players: playersReducer,
+  game: gameReducer,
 })

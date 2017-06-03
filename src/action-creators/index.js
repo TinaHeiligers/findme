@@ -3,6 +3,7 @@ const SELECT_CARD = 'SELECT_CARD'
 const ALL_CARDS = 'ALL_CARDS'
 
 const RESTART_GAME = 'RESTART_GAME'
+
 const ADD_PLAYER = 'ADD_PLAYER'
 
 // action creators
