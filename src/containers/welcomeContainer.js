@@ -2,8 +2,8 @@
 //Dispatch Actions
 import React from 'react'
 import { connect } from 'react-redux'
-import StartPage from './components/StartPage';
-import { restartGame, addPlayer } from './action-creators'
+import StartPage from '../components/StartPage';
+import { restartGame, addPlayer } from '../action-creators'
 
 const mapStateToProps = (state) => {
   return {

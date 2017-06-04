@@ -1,6 +1,6 @@
-
+import { SELECT_CARD, ALL_CARDS } from '../action-creators';
 // reducers
-const reducer = (state=null, action) => {
+const reducer = (state=[], action) => {
   switch (action.type) {
     case SELECT_CARD:
     return action.card

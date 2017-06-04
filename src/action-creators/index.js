@@ -1,12 +1,11 @@
 // actions
-const SELECT_CARD = 'SELECT_CARD'
-const DESELECT_CARD = 'DESELECT_CARD'
-const MATCH_CARD = 'MATCH_CARD'
-const UNMATCH_CARD = 'UNMATCH_CARD'
-const ALL_CARDS = 'ALL_CARDS'
-const RESTART_GAME = 'RESTART_GAME'
-const ADD_PLAYER = 'ADD_PLAYER'
-
+export const SELECT_CARD = 'SELECT_CARD'
+export const DESELECT_CARD = 'DESELECT_CARD'
+export const MATCH_CARD = 'MATCH_CARD'
+export const UNMATCH_CARD = 'UNMATCH_CARD'
+export const ALL_CARDS = 'ALL_CARDS'
+export const RESTART_GAME = 'RESTART_GAME'
+export const ADD_PLAYER = 'ADD_PLAYER'
 
 // we should pass as little data into an action creator as possible
 // action creators

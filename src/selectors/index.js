@@ -1,5 +1,9 @@
 
-export const preGame = (state) => !gameStarted(state) && !gameOver(state)
+export function preGame(state) {
+  console.log('******IN PREGAME FUNCTION, !gameStarted(state): ', !gameStarted(state))
+  console.log('******IN PREGAME FUNCTION, !gameOver(state): ', !gameOver(state))
+  return !gameStarted(state) && !gameOver(state)
+}
 
 export const currentPlayer = (state) => state.players[state.currentPlayerIndex]
 
@@ -10,6 +14,7 @@ export const scores = (state) => state.players.map(player => player.matchedCards
 export const gameStarted = (state) => state.cards.length > 0
 
 export const gameOver = (state) => {
+  console.log('******IN GAMEOVER********', state)
   if(!gameStarted(state)) {
     return false;
   } else {

@@ -4,20 +4,13 @@ import React from 'react';
 
 // eslint-disable-next-line
 class StartPage extends React.Component {
+
   createPlayer(event) {
     event.preventDefault();
-    if (this.props.players.length < 2) {
-      const player = {
-      name: this.name.value,
-      matchedCards: []
-      }
-      this.props.addPlayer(player);
-      this.playerForm.reset()
-      }
-    else {
-      return null
-    }
+    this.props.onAddPlayer(this.name.value)
+    this.playerForm.reset()
   }
+
   message(num) {
     if (num < 1) {
       return "Please add your name to start playing!"
@@ -30,12 +23,10 @@ class StartPage extends React.Component {
     }
   }
   playerWelcome(player) {
-    return this.props.gameStarted() ? player.matchedCards.length : `Welcome ${player.name}! `
+    return `Welcome ${player.name}!`
   }
+
   render() {
-    if (this.props.gameStarted()) {
-      return null
-    }
     return(
     <div className="startPageMainDiv">
       <h1>
@@ -44,24 +35,28 @@ class StartPage extends React.Component {
       <h2>Find my matching partner in all the cards!</h2>
       <div>
         <p>{this.message(this.props.players.length)}</p>
-        <form ref={(input) => this.playerForm = input}
-              className={this.props.players.length === 2 ? "hidden": "player-edit"}
-              onSubmit={(e) => this.createPlayer(e)}>
+        <form
+          ref={(input) => this.playerForm = input}
+          className={this.props.players.length === 2 ? "hidden": "player-edit"}
+          onSubmit={(e) => this.createPlayer(e)}
+        >
           <div className="name-input-container">
-            <input className="name-input"
-                  ref={(input) => this.name = input}
-                  type="text" placeholder="Player Name"/>
+            <input
+              className="name-input"
+              ref={(input) => this.name = input}
+              type="text" placeholder="Player Name"
+            />
           </div>
           <div className="add-me-button-container">
-            <button className="add-me-button" type="Submit">Add Me</button>
+            <button className="add-me-button" type="submit">Add Me</button>
           </div>
         </form>
       </div>
       <div className="player-welcome">{this.props.players.map((player) => this.playerWelcome(player))}</div>
       <div className="start-buttons">
-        <button className="start-easy-game-button" name="easy" onClick={(e) => this.props.restartGame(e.target.name)}>easy</button>
-        <button className="start-medium-game-button" name="medium" onClick={(e) => this.props.restartGame(e.target.name)}>medium</button>
-        <button className="start-hard-game-button" name="hard" onClick={(e) => this.props.restartGame(e.target.name)}>hard</button>
+        <button className="start-easy-game-button" onClick={() => this.props.onStartGame('easy')}>easy</button>
+        <button className="start-medium-game-button" onClick={() => this.props.onStartGame('medium')}>medium</button>
+        <button className="start-hard-game-button" onClick={() => this.props.onStartGame('hard')}>hard</button>
       </div>
     </div>
     )

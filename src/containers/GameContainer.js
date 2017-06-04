@@ -1,3 +1,5 @@
 //aware of redux
 //Dispatch Actions
-export default const GameContainer = {}
+import React from 'react';
+const GameContainer = () => (<div>'Game Container'</div>);
+export default GameContainer;
