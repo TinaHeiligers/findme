@@ -1,21 +1,24 @@
-//reducer
-  // addPlayer(player) {
-  //   const players = this.state.players;
-  //   if (players.length < 2) {
-  //       players.unshift(player)
-  //       this.setState({ players })
-  //     } else {
-  //     return "Only up to two may play!"
-  //     }
-  //   }
-import { ADD_PLAYER } from '../action-creators';
+import { ADD_PLAYER, RESTART_GAME } from '../action-creators';
 
 const reducer = (state=[], action) => {
-  let newState = [...state];
+
   switch (action.type) {
+    case RESTART_GAME:
+      return state.map((player, idx) => {
+        return {
+          name: player.name,
+          matchedCards: [],
+          turn: idx === 0
+        }
+      })
 
     case ADD_PLAYER:
-      return (newState.concat({ name: action.name, matchedCards: [], turn: false}))
+      let newState = [...state];
+      return newState.concat({
+        name: action.name,
+        matchedCards: [],
+        turn: false
+      })
   }
   return state
 }

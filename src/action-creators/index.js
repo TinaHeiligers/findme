@@ -15,9 +15,11 @@ export const ADD_PLAYER = 'ADD_PLAYER'
 // of UNMATCH_CARD and DESELECT_CARD on all cards will
 // it's dispatched within a cards.map function, ie
 // the
-export const restartGame = () => {
+export const restartGame = (difficulty) => {
+  //handled by two reducers: cards, players
   return {
-    type: RESTART_GAME
+    type: RESTART_GAME,
+    difficulty
   }
 }
 // adds a player: players becomes

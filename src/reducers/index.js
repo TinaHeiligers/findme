@@ -17,23 +17,7 @@ export default combineReducers({
 //        });
 //   }
 
-// //reducer
-//   randomizeCards(num){
-//     //doubles each card and randomizes order
-//     if(this.state.players.length === 0) {
-//       return;
-//     }
-//     const newCards = sampleCards.slice(0, num).concat(sampleCards.slice(0, num)).map(card => Object.assign({}, card));//making dups
-//     const shuffledCards = shuffle(newCards);
-//     //Resetting selected prop to false on repressing the button
-//     shuffledCards.forEach(card => {
-//       card.selected = false;
-//       card.matched = false;
-//     });
-//     this.setState({
-//       cards: [...shuffledCards]
-//     });
-//   }
+//
 
 // //reducer
 //   resetSelectedCards() {
