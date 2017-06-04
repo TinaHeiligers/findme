@@ -11,9 +11,11 @@
 import { ADD_PLAYER } from '../action-creators';
 
 const reducer = (state=[], action) => {
+  let newState = [...state];
   switch (action.type) {
+
     case ADD_PLAYER:
-    return action.player
+      return (newState.concat({ name: action.name, matchedCards: [], turn: false}))
   }
   return state
 }

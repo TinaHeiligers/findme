@@ -23,7 +23,7 @@ class StartPage extends React.Component {
     }
   }
   playerWelcome(player) {
-    return `Welcome ${player.name}!`
+    return `Welcome ${player.name}! `
   }
 
   render() {
