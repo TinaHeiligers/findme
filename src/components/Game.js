@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Not aware of redux
 import React from 'react';
 import { gameName } from '../helpers';

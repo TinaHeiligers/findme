@@ -1,3 +1,4 @@
+/* eslint-disable */
 //aware of redux
 //Dispatch Actions
 import React from 'react'

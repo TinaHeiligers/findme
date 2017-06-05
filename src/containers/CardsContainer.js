@@ -1,26 +1,31 @@
+/* eslint-disable */
 //aware of redux
 //Dispatch Actions
-import React from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { gameOver } from '../selectors'
 // import Card from './Card';
+const mapStateToProps = (state) => {
+  return {
+    cards: state.cards,
+    gameOver: gameOver(state)
+    }
+}
 
 class CardsContainer extends React.Component {
-  constructor() {
-    super();
-    this.renderCards = this.renderCards.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-  }
 
 //this handleClick event is in render cards
-  handleClick(e, card) {
+  handleClick(e, card, cardId) {
     e.preventDefault();
     // console.log(card.image);
     if(card.matched) {
-      // console.log("already matched");
+      alert("already matched");
       return;
     }
-    this.props.selectCard(card);
-    this.props.selectedCardsCheck();
+    this.props.selectACard(cardId); // now an action that is dispatched but I need to pass in the card Id for this card, not the whole card!
+    this.props.checkSelectedCards(); // now an action that is dispatched, tricky one here, I need all the cards but am not accessing them
   }
+// cardClassName is fine here
   cardClassName(card) {
     let array = ["card"];
     if (card.selected) {
@@ -30,6 +35,7 @@ class CardsContainer extends React.Component {
     }
     return array.join(" ");
   }
+// mainCardsContainerClassName is fine here
   mainCardsContainerClassName() {
     let styleArr = ["top"]
     switch (this.props.cards.length){
@@ -45,11 +51,11 @@ class CardsContainer extends React.Component {
       return styleArr.join(" ")
   }
 
-  renderCards(card, idx) {
+  renderCards(card, cardId) {
 
     return(
 
-      <div className="card-container" key={idx} name="selected" value={card.selected} onClick={(e) => this.handleClick(e, card)}>
+      <div className="card-container" key={cardId} name="selected" value={card.selected} onClick={(e) => this.handleClick(e, card, cardId)}>
         <div className={this.cardClassName(card)}>
           <div className="face front" style={{backgroundImage:`url(${card.image})`}}>
             <div className="name">{card.name}</div>
@@ -61,13 +67,10 @@ class CardsContainer extends React.Component {
   }
 
   render() {
-    if (!this.props.gameStarted()) {
-      return null
-    }
     return(
       <div className={this.mainCardsContainerClassName()}>
-        <div className="game-over hidden" value={this.props.gameOver()}>
-            <div>{this.props.gameOver() ? "GAME OVER! " : ""}</div>
+        <div className="game-over hidden" value={this.props.gameOver}>
+            <div>{this.props.gameOver ? "GAME OVER! " : ""}</div>
         </div>
         {this.props.cards.map(this.renderCards)}
         <br/>
@@ -76,4 +79,18 @@ class CardsContainer extends React.Component {
   }
 }
 
-export default CardsContainer;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectACard: (cards, cardId) => {
+      dispatch(selectCard(cardId))
+    },
+    checkSelectedCards: () => {
+      dispatch(selectedCardsCheck())
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CardsContainer)

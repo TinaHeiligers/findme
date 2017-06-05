@@ -1,3 +1,4 @@
+/* eslint-disable */
 // actions
 export const SELECT_CARD = 'SELECT_CARD'
 export const DESELECT_CARD = 'DESELECT_CARD'
@@ -39,12 +40,18 @@ export const addPlayer = (name) => {
     name
   }
 }
-// selectCard takes the card and changes it's selected property to true
+// selectCard takes the cardId and changes it's selected property to true
 // // i.e. card.selected = true
-export const selectCard = cardID => ({
+export const selectCard = (cardID) => ({
   type: SELECT_CARD,
-  cardID
+  (cardID)
 })
+
+export const checkSelectedCards = () => {
+  type: CHECK_SELECTED_CARDS
+}
+
+
 // deselectCard takes the card and changes it's selected property to false
 // i.e. card.selected = false
 export const deselectCard = cardID => ({

@@ -1,7 +1,5 @@
-
+/* eslint-disable */
 export function preGame(state) {
-  console.log('******IN PREGAME FUNCTION, !gameStarted(state): ', !gameStarted(state))
-  console.log('******IN PREGAME FUNCTION, !gameOver(state): ', !gameOver(state))
   return !gameStarted(state) && !gameOver(state)
 }
 
@@ -32,3 +30,44 @@ export const gameWinner = (state) => {
       .filter(player => player.matchedCards.length === maxScore)
       .map(player => player.name)
 }
+
+// this function needs to be refactored to a seperate selector and a seperate reducer
+export const selectedCardsCheck(state) {
+    const cards = [...this.state.cards]; // a copy of the cards
+    const selectedCards = cards.filter(card => card.selected); //
+    if (selectedCards.length === 2) {
+      if(selectedCards[0].name === selectedCards[1].name) {
+        selectedCards[0].matched = selectedCards[1].matched = true; // a reducer function
+        this.updateScore(selectedCards); // an action creator that dispatches for a reducer to handle
+      } else {
+        // console.log("Try again!");
+        return;
+      }
+      //switch turns
+      this.switchTurns();
+    }
+  }
+// This function belongs with selctedCardsCheck() now has to become a reducer for the players
+  switchTurns() {
+    if(this.gameOver() || this.state.players.length < 2) {
+      this.setState({
+        currentPlayerIndex: (this.state.currentPlayerIndex + 1) % this.state.players.length,
+        showNewPlayerState: 'hidden'
+      });
+    } else {
+      this.setState({
+        currentPlayerIndex: (this.state.currentPlayerIndex + 1) % this.state.players.length,
+        showNewPlayerState: 'zoomInUp'
+      });
+      setTimeout(() => {
+        this.setState({
+          showNewPlayerState: 'explodeOut'
+        })
+        setTimeout(() => {
+          this.setState({
+            showNewPlayerState: 'hidden'
+          })
+        }, 1000)
+      }, 1500)
+    }
+  }

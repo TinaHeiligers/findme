@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { ADD_PLAYER, RESTART_GAME } from '../action-creators';
 
 const reducer = (state=[], action) => {

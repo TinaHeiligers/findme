@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { combineReducers } from 'redux'
 // import all reducers from seperate files
 import cardsReducer from './cards'
@@ -20,26 +21,10 @@ export default combineReducers({
 //
 
 // //reducer
-//   resetSelectedCards() {
-//     let selectedCards = this.state.selectedCards.slice(0);
-//     const cards = [...this.state.cards];
-//     if (selectedCards.length === 2) {
-//       selectedCards = [];
-//       cards.forEach(card => card.selected = false);
-//       this.setState({cards: cards, selectedCards: selectedCards});
-//     }
-//     return selectedCards;
-//   }
+
 
 // //reducer
-//   selectCard(card) {
-//     //resetting chosen cards array to add a new turn of card selection
-//     const selectedCards = this.resetSelectedCards()
-//     card.selected = true;
-//     //overwriting the old card with the new one, don't remove this line of code, it's not a duplicate!
-//     selectedCards.push(card);
-//     this.setState({selectedCards: selectedCards});
-//   }
+
 // //reducer
 //   updateScore(matchedCards) {
 //     const currentPlayer = this.currentPlayer();
