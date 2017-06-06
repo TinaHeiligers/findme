@@ -44,7 +44,7 @@ export const addPlayer = (name) => {
 // // i.e. card.selected = true
 export const selectCard = (cardID) => ({
   type: SELECT_CARD,
-  (cardID)
+  cardID
 })
 
 export const checkSelectedCards = () => {

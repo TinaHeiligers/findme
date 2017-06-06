@@ -32,7 +32,7 @@ export const gameWinner = (state) => {
 }
 
 // this function needs to be refactored to a seperate selector and a seperate reducer
-export const selectedCardsCheck(state) {
+export function selectedCardsCheck(state) {
     const cards = [...this.state.cards]; // a copy of the cards
     const selectedCards = cards.filter(card => card.selected); //
     if (selectedCards.length === 2) {
@@ -48,7 +48,7 @@ export const selectedCardsCheck(state) {
     }
   }
 // This function belongs with selctedCardsCheck() now has to become a reducer for the players
-  switchTurns() {
+  function switchTurns() {
     if(this.gameOver() || this.state.players.length < 2) {
       this.setState({
         currentPlayerIndex: (this.state.currentPlayerIndex + 1) % this.state.players.length,

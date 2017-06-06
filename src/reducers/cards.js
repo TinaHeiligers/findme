@@ -27,13 +27,14 @@ function resetSelectedCards(cards) {
   return (selectedCards.length < 2) ? selectedCards : resetAllSelectedCards(cards)
 }
 
-
-// this is a function that must be refactored into a reducer!
-//  all this function needs to do is change the .selected property of the card for which the id is cardId to true
 function selectCard(cardId, cards) {
-  let newCards = cards.slice(0);
-  newCards[cardId].selected = true;
-  return newCards;
+  return cards.map((card, id) => {
+    if (id === cardId) {
+      return Object.assign({}, card, { selected: true })
+    } else {
+      return card;
+    }
+  })
 }
 
 // reducers, at this stage, we only have an array of cards on the state.
@@ -46,10 +47,12 @@ const cardsReducer = (state=[], action) => {
     return randomizeCards(DIFFICULTIES[action.difficulty])
 
     case SELECT_CARD:
-    return selectCard(action.cardId, state) // this should be fine since the reducer has all the cards on state from the store
+    return selectCard(action.cardID, state) // this should be fine since the reducer has all the cards on state from the store
 
     case ALL_CARDS:
     return action.cards
   }
   return state
 }
+
+export default cardsReducer;

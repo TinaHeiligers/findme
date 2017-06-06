@@ -4,13 +4,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { gameOver } from '../selectors'
+import { selectCard } from '../action-creators'
 // import Card from './Card';
-const mapStateToProps = (state) => {
-  return {
-    cards: state.cards,
-    gameOver: gameOver(state)
-    }
-}
+
 
 class CardsContainer extends React.Component {
 
@@ -22,8 +18,8 @@ class CardsContainer extends React.Component {
       alert("already matched");
       return;
     }
-    this.props.selectACard(cardId); // now an action that is dispatched but I need to pass in the card Id for this card, not the whole card!
-    this.props.checkSelectedCards(); // now an action that is dispatched, tricky one here, I need all the cards but am not accessing them
+    this.props.onCardSelected(cardId); // now an action that is dispatched but I need to pass in the card Id for this card, not the whole card!
+    // this.props.checkSelectedCards(); // now an action that is dispatched, tricky one here, I need all the cards but am not accessing them
   }
 // cardClassName is fine here
   cardClassName(card) {
@@ -72,16 +68,23 @@ class CardsContainer extends React.Component {
         <div className="game-over hidden" value={this.props.gameOver}>
             <div>{this.props.gameOver ? "GAME OVER! " : ""}</div>
         </div>
-        {this.props.cards.map(this.renderCards)}
+        {this.props.cards.map(this.renderCards.bind(this))}
         <br/>
       </div>
       )
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    cards: state.cards,
+    gameOver: gameOver(state)
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    selectACard: (cards, cardId) => {
+    onCardSelected: (cardId) => {
       dispatch(selectCard(cardId))
     },
     checkSelectedCards: () => {
