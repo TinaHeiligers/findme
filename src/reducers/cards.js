@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { SELECT_CARD, ALL_CARDS, RESTART_GAME } from '../action-creators';
+import { SELECT_CARD, ALL_CARDS, RESTART_GAME, CHECK_SELECTED_CARDS } from '../action-creators';
 import sampleCards from '../sample-cards';
 import { shuffle } from '../helpers'
 
@@ -27,14 +27,38 @@ function resetSelectedCards(cards) {
   return (selectedCards.length < 2) ? selectedCards : resetAllSelectedCards(cards)
 }
 
-function selectCard(cardId, cards) {
+function selectCard(cardID, cards) {
+  let currentlySelectedCards = cards.filter(card => card.selected);
+  if (currentlySelectedCards.length === 2) {
+    cards = cards.map(card => {
+      if(card.selected) {
+        return Object.assign({}, card, { selected: false })
+      } else {
+        return card;
+      }
+    })
+  }
   return cards.map((card, id) => {
-    if (id === cardId) {
+    if (id === cardID) {
       return Object.assign({}, card, { selected: true })
     } else {
       return card;
     }
   })
+}
+
+function checkSelectedCards(cards) {
+  let currentlySelectedCards = cards.filter(card => card.selected);
+  if (currentlySelectedCards.length === 2) {
+    if (currentlySelectedCards[0].name === currentlySelectedCards[1].name) {
+      console.log('It\'s a match!')
+      // now go update this player's score
+    }
+    // check that they are the same by name
+    // if they are
+  }
+  console.log(currentlySelectedCards.length)
+  return cards;
 }
 
 // reducers, at this stage, we only have an array of cards on the state.
@@ -48,6 +72,9 @@ const cardsReducer = (state=[], action) => {
 
     case SELECT_CARD:
     return selectCard(action.cardID, state) // this should be fine since the reducer has all the cards on state from the store
+
+    case CHECK_SELECTED_CARDS:
+    return checkSelectedCards(state)
 
     case ALL_CARDS:
     return action.cards

@@ -3,22 +3,23 @@
 //Dispatch Actions
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { gameOver } from '../selectors'
-import { selectCard } from '../action-creators'
+import { gameOver, selectedCards } from '../selectors'
+import { selectCard, checkSelectedCards } from '../action-creators'
+
 // import Card from './Card';
 
 
 class CardsContainer extends React.Component {
 
 //this handleClick event is in render cards
-  handleClick(e, card, cardId) {
+  handleClick(e, card, cardID) {
     e.preventDefault();
     // console.log(card.image);
     if(card.matched) {
       alert("already matched");
       return;
     }
-    this.props.onCardSelected(cardId); // now an action that is dispatched but I need to pass in the card Id for this card, not the whole card!
+    this.props.onCardSelected(cardID); // now an action that is dispatched but I need to pass in the card Id for this card, not the whole card!
     // this.props.checkSelectedCards(); // now an action that is dispatched, tricky one here, I need all the cards but am not accessing them
   }
 // cardClassName is fine here
@@ -47,11 +48,11 @@ class CardsContainer extends React.Component {
       return styleArr.join(" ")
   }
 
-  renderCards(card, cardId) {
+  renderCards(card, cardID) {
 
     return(
 
-      <div className="card-container" key={cardId} name="selected" value={card.selected} onClick={(e) => this.handleClick(e, card, cardId)}>
+      <div className="card-container" key={cardID} name="selected" value={card.selected} onClick={(e) => this.handleClick(e, card, cardID)}>
         <div className={this.cardClassName(card)}>
           <div className="face front" style={{backgroundImage:`url(${card.image})`}}>
             <div className="name">{card.name}</div>
@@ -84,11 +85,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onCardSelected: (cardId) => {
-      dispatch(selectCard(cardId))
-    },
-    checkSelectedCards: () => {
-      dispatch(selectedCardsCheck())
+    onCardSelected: (cardID) => {
+      dispatch(selectCard(cardID))
+      dispatch(checkSelectedCards())
     }
   }
 }

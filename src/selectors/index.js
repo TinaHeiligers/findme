@@ -31,14 +31,20 @@ export const gameWinner = (state) => {
       .map(player => player.name)
 }
 
+export function selectedCards(state) {
+  return state.cards.filter(card => card.selected)
+}
+
 // this function needs to be refactored to a seperate selector and a seperate reducer
 export function selectedCardsCheck(state) {
     const cards = [...this.state.cards]; // a copy of the cards
-    const selectedCards = cards.filter(card => card.selected); //
-    if (selectedCards.length === 2) {
-      if(selectedCards[0].name === selectedCards[1].name) {
-        selectedCards[0].matched = selectedCards[1].matched = true; // a reducer function
-        this.updateScore(selectedCards); // an action creator that dispatches for a reducer to handle
+
+    const selectedCardsArray = selectedCards(cards);
+
+    if (selectedCardsArray.length === 2) {
+      if(selectedCardsArray[0].name === selectedCardsArray[1].name) {
+        selectedCardsArray[0].matched = selectedCardsArray[1].matched = true; // a reducer function
+        this.updateScore(selectedCardsArray); // an action creator that dispatches for a reducer to handle
       } else {
         // console.log("Try again!");
         return;

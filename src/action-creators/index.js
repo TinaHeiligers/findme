@@ -7,6 +7,7 @@ export const UNMATCH_CARD = 'UNMATCH_CARD'
 export const ALL_CARDS = 'ALL_CARDS'
 export const RESTART_GAME = 'RESTART_GAME'
 export const ADD_PLAYER = 'ADD_PLAYER'
+export const CHECK_SELECTED_CARDS = 'CHECK_SELECTED_CARDS'
 
 // we should pass as little data into an action creator as possible
 // action creators
@@ -40,16 +41,17 @@ export const addPlayer = (name) => {
     name
   }
 }
-// selectCard takes the cardId and changes it's selected property to true
+
+// selectCard takes the cardID and changes it's selected property to true
 // // i.e. card.selected = true
 export const selectCard = (cardID) => ({
   type: SELECT_CARD,
   cardID
 })
 
-export const checkSelectedCards = () => {
+export const checkSelectedCards = () => ({
   type: CHECK_SELECTED_CARDS
-}
+})
 
 
 // deselectCard takes the card and changes it's selected property to false
