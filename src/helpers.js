@@ -1,4 +1,3 @@
-/* eslint-disable */
 export function rando(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -10,14 +9,14 @@ export function getFunName() {
   return `${rando(adjectives)}-${rando(nouns)}`;
 }
 
-export const gameName=getFunName();
+export const gameName=getFunName()
 
 export function getRandomNumber() {
   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return `${rando(nums)}`;
 }
 
-export const gameNumber = getRandomNumber();
+export const gameNumber = getRandomNumber()
 
 export function shuffle(arr) {
   var currentIndex = arr.length, temporaryValue, randomIndex;
