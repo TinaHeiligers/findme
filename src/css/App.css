@@ -288,6 +288,13 @@ span.cards-remaining {
 /*END winner, turn Animations base styles*/
 
 /*START CARDS-CONTAINER*/
+.card-container {
+  position: relative;
+  height: 33.3%;
+  -webkit-perspective: 800px;
+  perspective: 800px;
+  display: inline-block;
+}
 .easy .card-container {
   flex: 1 1 25%; /* here */
 }
@@ -297,13 +304,7 @@ span.cards-remaining {
 .hard .card-container {
   flex: 1 1 12.5%; /* here */
 }
-.card-container {
-  position: relative;
-  height: 33.3%; /* here */
-  perspective: 800px;
-  display: inline-block;
-  flex: 1 1 12.5%;
-}
+
 .card {
   padding: 5%; /* here */
   width: 90%; /* here */

@@ -205,7 +205,7 @@ class App extends Component {
             preGame={this.preGame}
             />
           <CardsContainer
-            className="cards-container"
+
             cards={this.state.cards}
             selectCard={this.selectCard}
             selectedCardsCheck={this.selectedCardsCheck}
