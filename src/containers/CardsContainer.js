@@ -20,12 +20,14 @@ class CardsContainer extends React.Component {
     this.props.selectedCardsCheck();
   }
   cardClassName(card) {
+
     let array = ["card"];
     if (card.selected) {
       array.push("selected")
     } else if (card.matched) {
       array.push("matched")
     }
+    console.log('cardClassName:', array.join(" "))
     return array.join(" ");
   }
   mainCardsContainerClassName() {
@@ -44,9 +46,7 @@ class CardsContainer extends React.Component {
   }
 
   renderCards(card, idx) {
-
     return(
-
       <div className="card-container" key={idx} name="selected" value={card.selected} onClick={(e) => this.handleClick(e, card)}>
         <div className={this.cardClassName(card)}>
           <div className="face front" style={{backgroundImage:`url(${card.image})`}}>

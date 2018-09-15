@@ -20,7 +20,6 @@ class App extends Component {
       currentPlayerIndex: 0,
       showNewPlayerState: 'hidden'
     };
-
     this.addPlayer = this.addPlayer.bind(this)
     this.restartGame = this.restartGame.bind(this)
     this.selectCard = this.selectCard.bind(this)
@@ -30,13 +29,21 @@ class App extends Component {
     this.preGame = this.preGame.bind(this)
     this.selectedCardsCheck = this.selectedCardsCheck.bind(this)
     this.totalScores = this.totalScores.bind(this)
-
   }
-
   preGame() {
-    return !this.gameStarted() && ! this.gameOver()
+    return !this.gameStarted() && !this.gameOver()
   }
-
+  gameStarted() {
+    return this.state.cards.length > 0;
+  }
+  gameOver() {
+    if(!this.gameStarted()) {
+      return false;
+    } else {
+      const totalScores = this.scores().reduce((a, b) => a + b, 0);
+      return totalScores === this.totalNumberOfCards();
+    }
+  }
   addPlayer(player) {
     const players = this.state.players;
     if (players.length < 2) {
@@ -46,11 +53,9 @@ class App extends Component {
       return "Only up to two may play!"
       }
     }
-
   currentPlayer() {
     return this.state.players[this.state.currentPlayerIndex];
   }
-
   resetPlayers() {
     const players = [...this.state.players];
     players.forEach(player => player.matchedCards = []);
@@ -59,37 +64,20 @@ class App extends Component {
       currentPlayerIndex: 0
        });
   }
-
   players() {
     return this.state.players;
   }
-
   totalNumberOfCards() {
     return this.state.cards.length;
   }
-
   scores() {
     return this.state.players.map(player => player.matchedCards.length);
   }
 
-  //gameStarted toggles directly back to false after I click one card.
-  gameStarted() {
-    return this.state.cards.length > 0;
-  }
-
-  gameOver() {
-    if(!this.gameStarted()) {
-      return false;
-    } else {
-      const totalScores = this.scores().reduce((a, b) => a + b, 0);
-      return totalScores === this.totalNumberOfCards();
-    }
-  }
 
   totalScores() {
     return this.scores().reduce((a, b) => a + b, 0)
   }
-
   gameWinner() {
     const maxScore = Math.max(...this.scores());
     //retrieve the player(s) names who have this score
@@ -97,7 +85,6 @@ class App extends Component {
         .filter(player => player.matchedCards.length === maxScore)
         .map(player => player.name)
   }
-
   randomizeCards(num){
     //doubles each card and randomizes order
     if(this.state.players.length === 0) {
@@ -114,7 +101,6 @@ class App extends Component {
       cards: [...shuffledCards]
     });
   }
-
   resetSelectedCards() {
     let selectedCards = this.state.selectedCards.slice(0);
     const cards = [...this.state.cards];
@@ -125,7 +111,6 @@ class App extends Component {
     }
     return selectedCards;
   }
-
   selectCard(card) {
     //resetting chosen cards array to add a new turn of card selection
     const selectedCards = this.resetSelectedCards()
@@ -134,7 +119,6 @@ class App extends Component {
     selectedCards.push(card);
     this.setState({selectedCards: selectedCards});
   }
-
   selectedCardsCheck() {
     const cards = [...this.state.cards];
     const selectedCards = cards.filter(card => card.selected);
@@ -150,7 +134,6 @@ class App extends Component {
       this.switchTurns();
     }
   }
-
   switchTurns() {
     if(this.gameOver() || this.state.players.length < 2) {
       this.setState({
@@ -178,8 +161,6 @@ class App extends Component {
     const currentPlayer = this.currentPlayer();
     currentPlayer.matchedCards.push(...matchedCards);
   }
-
-
   restartGame(e) {
     //sets number of unique cards to load
     let num;
@@ -192,20 +173,17 @@ class App extends Component {
     this.randomizeCards(num);
     this.resetPlayers();
   }
-
-
   render() {
     return(
       <div>
           <StartPage
-            restartGame={this.restartGame}
             players={this.state.players}
+            restartGame={this.restartGame}
             addPlayer={this.addPlayer}
             gameStarted={this.gameStarted}
             preGame={this.preGame}
             />
           <CardsContainer
-
             cards={this.state.cards}
             selectCard={this.selectCard}
             selectedCardsCheck={this.selectedCardsCheck}
@@ -223,10 +201,10 @@ class App extends Component {
             />
           <Players
             players={this.state.players}
+            showNewPlayer={this.state.showNewPlayer}
             addPlayer={this.addPlayer}
             gameStarted={this.gameStarted}
             currentPlayer={this.currentPlayer()}
-            showNewPlayer={this.state.showNewPlayer}
             gameWinner={this.gameWinner}
             gameOver={this.gameOver}
             preGame={this.preGame}
@@ -248,5 +226,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

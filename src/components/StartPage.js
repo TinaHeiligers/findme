@@ -67,6 +67,4 @@ class StartPage extends React.Component {
   }
 }
 
-
 export default StartPage;
-// {this.props.players.length === 2 ? "hidden": "add-me-button"}

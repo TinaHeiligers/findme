@@ -25,7 +25,6 @@ class Players extends React.Component {
         <ul>
           {(this.props.players || []).map(player => this.renderPlayer(player))}
         </ul>
-
         <div>
         <span className="cards-remaining">{(this.props.cards.length - this.props.totalScores)}</span>
         </div>
