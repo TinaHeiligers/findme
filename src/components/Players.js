@@ -6,11 +6,11 @@ class Players extends React.Component {
     return this.props.gameStarted() ? player.matchedCards.length : "Welcome!"
   }
 
-  renderPlayer(player) {
+  renderPlayer(player, index) {
     return(
-      <li key={player.name} className="players">
-        <span>{player.name}</span>
-        <span> {this.message(player)}</span>
+      <li key={ player.name ? player.name : index } className="players">
+        <span>{ player.name }</span>
+        <span> { this.message(player) }</span>
       </li>
     )
   }
@@ -23,10 +23,10 @@ class Players extends React.Component {
     return(
       <div className="bottom bottom-right">
         <ul>
-          {(this.props.players || []).map(player => this.renderPlayer(player))}
+          { (this.props.players || []).map((player, index) => this.renderPlayer(player, index)) }
         </ul>
         <div>
-        <span className="cards-remaining">{(this.props.cards.length - this.props.totalScores)}</span>
+        <span className="cards-remaining">{ (this.props.cards.length - this.props.totalScores) }</span>
         </div>
       </div>
       )

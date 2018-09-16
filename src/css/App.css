@@ -436,6 +436,7 @@ button.start-game-button {
 }
 .buttons-restart {
   text-align: center;
+  font-size: 0.5em;
   margin-bottom: 0.5vw;
   margin-top: 0.5vw;
 }
@@ -445,7 +446,6 @@ button.start-game-button {
   border-radius: 50px;
   padding: 0.1em 0.1em;
   margin-right: 5px;
-  font-size: 2vh;
   background: green; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#00e600, #006800); /* Safari 5.1 to 6.0 */
   background: -o-radial-gradient(#00e600, #006800); /* For Opera 11.6 to 12.0 */
@@ -460,7 +460,6 @@ button.start-game-button {
   height: 50px;
   width: 50px;
   padding: 0.1em 0.1em;
-  font-size: 0.6vw;
   background: orange; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#ff8c00, #cd6600); /* Safari 5.1 to 6.0 */
   background: -o-radial-gradient(#ff8c00, #cd6600); /* For Opera 11.6 to 12.0 */
@@ -475,7 +474,6 @@ button.start-game-button {
   height: 50px;
   width: 50px;
   padding: 0.1em 0.1em;
-  font-size: 2vh;
   background: red; /* For browsers that do not support gradients */
   background: -webkit-radial-gradient(#ff0000, #8b0000); /* Safari 5.1 to 6.0 */
   background: -o-radial-gradient(#ff0000, #8b0000); /* For Opera 11.6 to 12.0 */
