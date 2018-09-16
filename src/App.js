@@ -46,7 +46,7 @@ class App extends Component {
 
   currentPlayer = () => this.state.players[this.state.currentPlayerIndex];
 
-  resetPlayers() {
+  resetPlayers = () => {
     const players = [...this.state.players];
     players.forEach(player => player.matchedCards = []);
     this.setState({
