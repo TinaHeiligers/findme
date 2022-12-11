@@ -1,4 +1,6 @@
-This project is no longer actively maintained and considered frozen.
+### This project is no longer actively maintained and considered frozen.
+
+<hr></hr>
 
 This project is the result of my stackathon at Grace Hopper Academy, 2017.
 
