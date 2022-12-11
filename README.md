@@ -1,3 +1,5 @@
+This project is no longer actively maintained and considered frozen.
+
 This project is the result of my stackathon at Grace Hopper Academy, 2017.
 See me live here [findMe](https://cryptic-bastion-69594.herokuapp.com) deployed on heroku at https://cryptic-bastion-69594.herokuapp.com
 
